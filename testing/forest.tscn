@@ -1,13 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://dl1vhd3qoyhn5"]
+[gd_scene load_steps=10 format=3 uid="uid://dl1vhd3qoyhn5"]
 
-[ext_resource type="Texture2D" uid="uid://dma22u16xh2fi" path="res://tree_02.png" id="1_c42pp"]
-[ext_resource type="Texture2D" uid="uid://danbq0lrdd76p" path="res://tree_01.png" id="2_pk05l"]
-[ext_resource type="Texture2D" uid="uid://bc0shb4yt2nlp" path="res://road.png" id="3_84vso"]
-[ext_resource type="Texture2D" uid="uid://dq0q7liy88ihf" path="res://bush_01.png" id="4_yiwbf"]
-[ext_resource type="Texture2D" uid="uid://c671yjog7tf0o" path="res://monster.png" id="5_4ru87"]
-[ext_resource type="Texture2D" uid="uid://copauticogsmb" path="res://grass.png" id="5_t0k8f"]
-[ext_resource type="Texture2D" uid="uid://bv25cwug68nnm" path="res://paseant.png" id="6_ulh8t"]
-[ext_resource type="Texture2D" uid="uid://b3fykvuw6tta3" path="res://card_01.png" id="7_scmhg"]
+[ext_resource type="Texture2D" uid="uid://dma22u16xh2fi" path="res://tree_02.png" id="1_j0wnd"]
+[ext_resource type="Texture2D" uid="uid://danbq0lrdd76p" path="res://tree_01.png" id="2_1j75x"]
+[ext_resource type="Texture2D" uid="uid://dq0q7liy88ihf" path="res://bush_01.png" id="3_mcu4g"]
+[ext_resource type="Texture2D" uid="uid://bc0shb4yt2nlp" path="res://road.png" id="4_jwmf3"]
+[ext_resource type="Texture2D" uid="uid://copauticogsmb" path="res://grass.png" id="5_n1yta"]
+[ext_resource type="Texture2D" uid="uid://c671yjog7tf0o" path="res://monster.png" id="6_tv6np"]
+[ext_resource type="PackedScene" uid="uid://h4h81drr7gi7" path="res://actors/monster.tscn" id="7_e51r8"]
+[ext_resource type="Texture2D" uid="uid://bv25cwug68nnm" path="res://paseant.png" id="8_gtl23"]
+[ext_resource type="Texture2D" uid="uid://b3fykvuw6tta3" path="res://card_01.png" id="9_btq4r"]
 
 [node name="Forest" type="Node2D"]
 position = Vector2(311, 143)
@@ -16,46 +17,46 @@ position = Vector2(311, 143)
 
 [node name="Tree02" type="Sprite2D" parent="Trees"]
 position = Vector2(179, 14)
-texture = ExtResource("1_c42pp")
+texture = ExtResource("1_j0wnd")
 
 [node name="Tree01" type="Sprite2D" parent="Trees"]
-texture = ExtResource("2_pk05l")
+texture = ExtResource("2_1j75x")
 
 [node name="Tree09" type="Sprite2D" parent="Trees"]
 position = Vector2(-313, 15)
-texture = ExtResource("2_pk05l")
+texture = ExtResource("2_1j75x")
 
 [node name="Tree10" type="Sprite2D" parent="Trees"]
 position = Vector2(831, 20)
-texture = ExtResource("2_pk05l")
+texture = ExtResource("2_1j75x")
 
 [node name="Tree03" type="Sprite2D" parent="Trees"]
 position = Vector2(468.5, 20.5)
-texture = ExtResource("1_c42pp")
+texture = ExtResource("1_j0wnd")
 
 [node name="Tree08" type="Sprite2D" parent="Trees"]
 position = Vector2(-102, 22)
-texture = ExtResource("1_c42pp")
+texture = ExtResource("1_j0wnd")
 
 [node name="Tree05" type="Sprite2D" parent="Trees"]
 position = Vector2(682, 19)
-texture = ExtResource("1_c42pp")
+texture = ExtResource("1_j0wnd")
 
 [node name="Tree06" type="Sprite2D" parent="Trees"]
 position = Vector2(1022, 24)
-texture = ExtResource("1_c42pp")
+texture = ExtResource("1_j0wnd")
 
 [node name="Tree07" type="Sprite2D" parent="Trees"]
 position = Vector2(1232, 12)
-texture = ExtResource("1_c42pp")
+texture = ExtResource("1_j0wnd")
 
 [node name="Tree04" type="Sprite2D" parent="Trees"]
 position = Vector2(289.5, 6.5)
-texture = ExtResource("2_pk05l")
+texture = ExtResource("2_1j75x")
 
 [node name="Tree11" type="Sprite2D" parent="Trees"]
 position = Vector2(1410, 22)
-texture = ExtResource("2_pk05l")
+texture = ExtResource("2_1j75x")
 
 [node name="BushesBack" type="Node2D" parent="."]
 position = Vector2(-519, 270)
@@ -63,227 +64,228 @@ scale = Vector2(0.6, 0.6)
 
 [node name="Bush" type="Sprite2D" parent="BushesBack"]
 position = Vector2(67, 97)
-texture = ExtResource("4_yiwbf")
+texture = ExtResource("3_mcu4g")
 
 [node name="Bush2" type="Sprite2D" parent="BushesBack"]
 position = Vector2(237, 108)
-texture = ExtResource("4_yiwbf")
+texture = ExtResource("3_mcu4g")
 
 [node name="Bush3" type="Sprite2D" parent="BushesBack"]
 position = Vector2(424, 98)
-texture = ExtResource("4_yiwbf")
+texture = ExtResource("3_mcu4g")
 
 [node name="Bush4" type="Sprite2D" parent="BushesBack"]
 position = Vector2(589, 123)
-texture = ExtResource("4_yiwbf")
+texture = ExtResource("3_mcu4g")
 
 [node name="Bush6" type="Sprite2D" parent="BushesBack"]
 position = Vector2(927, 128)
-texture = ExtResource("4_yiwbf")
+texture = ExtResource("3_mcu4g")
 
 [node name="Bush8" type="Sprite2D" parent="BushesBack"]
 position = Vector2(1316, 123)
-texture = ExtResource("4_yiwbf")
+texture = ExtResource("3_mcu4g")
 
 [node name="Bush10" type="Sprite2D" parent="BushesBack"]
 position = Vector2(1759, 115)
-texture = ExtResource("4_yiwbf")
+texture = ExtResource("3_mcu4g")
 
 [node name="Bush11" type="Sprite2D" parent="BushesBack"]
 position = Vector2(1942, 117)
-texture = ExtResource("4_yiwbf")
+texture = ExtResource("3_mcu4g")
 
 [node name="Bush9" type="Sprite2D" parent="BushesBack"]
 position = Vector2(1516, 117)
-texture = ExtResource("4_yiwbf")
+texture = ExtResource("3_mcu4g")
 
 [node name="Bush7" type="Sprite2D" parent="BushesBack"]
 position = Vector2(1121, 117)
-texture = ExtResource("4_yiwbf")
+texture = ExtResource("3_mcu4g")
 
 [node name="Bush5" type="Sprite2D" parent="BushesBack"]
 position = Vector2(727, 112)
-texture = ExtResource("4_yiwbf")
+texture = ExtResource("3_mcu4g")
 
 [node name="Bush12" type="Sprite2D" parent="BushesBack"]
 position = Vector2(2075.67, 121)
-texture = ExtResource("4_yiwbf")
+texture = ExtResource("3_mcu4g")
 
 [node name="Bush13" type="Sprite2D" parent="BushesBack"]
 position = Vector2(2245.67, 132)
-texture = ExtResource("4_yiwbf")
+texture = ExtResource("3_mcu4g")
 
 [node name="Bush14" type="Sprite2D" parent="BushesBack"]
 position = Vector2(2432.67, 122)
-texture = ExtResource("4_yiwbf")
+texture = ExtResource("3_mcu4g")
 
 [node name="Bush15" type="Sprite2D" parent="BushesBack"]
 position = Vector2(2597.67, 147)
-texture = ExtResource("4_yiwbf")
+texture = ExtResource("3_mcu4g")
 
 [node name="Bush16" type="Sprite2D" parent="BushesBack"]
 position = Vector2(2935.67, 152)
-texture = ExtResource("4_yiwbf")
+texture = ExtResource("3_mcu4g")
 
 [node name="Bush17" type="Sprite2D" parent="BushesBack"]
 position = Vector2(3324.67, 147)
-texture = ExtResource("4_yiwbf")
+texture = ExtResource("3_mcu4g")
 
 [node name="Bush18" type="Sprite2D" parent="BushesBack"]
 position = Vector2(3767.67, 139)
-texture = ExtResource("4_yiwbf")
+texture = ExtResource("3_mcu4g")
 
 [node name="Bush19" type="Sprite2D" parent="BushesBack"]
 position = Vector2(3950.67, 141)
-texture = ExtResource("4_yiwbf")
+texture = ExtResource("3_mcu4g")
 
 [node name="Bush20" type="Sprite2D" parent="BushesBack"]
 position = Vector2(3524.67, 141)
-texture = ExtResource("4_yiwbf")
+texture = ExtResource("3_mcu4g")
 
 [node name="Bush21" type="Sprite2D" parent="BushesBack"]
 position = Vector2(3129.67, 141)
-texture = ExtResource("4_yiwbf")
+texture = ExtResource("3_mcu4g")
 
 [node name="Bush22" type="Sprite2D" parent="BushesBack"]
 position = Vector2(2735.67, 136)
-texture = ExtResource("4_yiwbf")
+texture = ExtResource("3_mcu4g")
 
 [node name="Road" type="Node2D" parent="."]
 
 [node name="Tree12" type="Sprite2D" parent="Road"]
 position = Vector2(-222, 452)
-texture = ExtResource("3_84vso")
+texture = ExtResource("4_jwmf3")
 
 [node name="Tree13" type="Sprite2D" parent="Road"]
 position = Vector2(3, 454)
-texture = ExtResource("3_84vso")
+texture = ExtResource("4_jwmf3")
 
 [node name="Tree14" type="Sprite2D" parent="Road"]
 position = Vector2(214, 459)
-texture = ExtResource("3_84vso")
+texture = ExtResource("4_jwmf3")
 
 [node name="Tree15" type="Sprite2D" parent="Road"]
 position = Vector2(431, 456)
-texture = ExtResource("3_84vso")
+texture = ExtResource("4_jwmf3")
 
 [node name="Tree16" type="Sprite2D" parent="Road"]
 position = Vector2(647, 458)
-texture = ExtResource("3_84vso")
+texture = ExtResource("4_jwmf3")
 
 [node name="Tree17" type="Sprite2D" parent="Road"]
 position = Vector2(914, 460)
-texture = ExtResource("3_84vso")
+texture = ExtResource("4_jwmf3")
 
 [node name="Tree18" type="Sprite2D" parent="Road"]
 position = Vector2(1193, 458)
-texture = ExtResource("3_84vso")
+texture = ExtResource("4_jwmf3")
 
 [node name="Tree19" type="Sprite2D" parent="Road"]
 position = Vector2(1193, 458)
-texture = ExtResource("3_84vso")
+texture = ExtResource("4_jwmf3")
 
 [node name="Tree20" type="Sprite2D" parent="Road"]
 position = Vector2(1444, 453)
-texture = ExtResource("3_84vso")
+texture = ExtResource("4_jwmf3")
 
 [node name="Tree21" type="Sprite2D" parent="Road"]
 position = Vector2(-440, 436)
-texture = ExtResource("3_84vso")
+texture = ExtResource("4_jwmf3")
 
 [node name="Grass" type="Node2D" parent="."]
 position = Vector2(422, 90)
 
 [node name="Grass2" type="Sprite2D" parent="Grass"]
 position = Vector2(-493, 303)
-texture = ExtResource("5_t0k8f")
+texture = ExtResource("5_n1yta")
 
 [node name="Grass3" type="Sprite2D" parent="Grass"]
 position = Vector2(-195, 305)
-texture = ExtResource("5_t0k8f")
+texture = ExtResource("5_n1yta")
 
 [node name="Grass4" type="Sprite2D" parent="Grass"]
 position = Vector2(84, 308)
-texture = ExtResource("5_t0k8f")
+texture = ExtResource("5_n1yta")
 
 [node name="Grass5" type="Sprite2D" parent="Grass"]
 position = Vector2(356, 310)
-texture = ExtResource("5_t0k8f")
+texture = ExtResource("5_n1yta")
 
 [node name="Grass6" type="Sprite2D" parent="Grass"]
 position = Vector2(659, 313)
-texture = ExtResource("5_t0k8f")
+texture = ExtResource("5_n1yta")
 
 [node name="Grass7" type="Sprite2D" parent="Grass"]
 position = Vector2(953, 311)
-texture = ExtResource("5_t0k8f")
+texture = ExtResource("5_n1yta")
 
 [node name="Grass8" type="Sprite2D" parent="Grass"]
 position = Vector2(-793, 314)
-texture = ExtResource("5_t0k8f")
+texture = ExtResource("5_n1yta")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(-253, 290)
+visible = false
+position = Vector2(177, 223)
 color = Color(0.741176, 0.0470588, 0, 1)
 energy = 2.96
 shadow_color = Color(0, 0, 0, 1)
-texture = ExtResource("5_4ru87")
+texture = ExtResource("6_tv6np")
 
 [node name="BushesFront" type="Node2D" parent="."]
 position = Vector2(-440, 436)
 
 [node name="Bush" type="Sprite2D" parent="BushesFront"]
 position = Vector2(67, 97)
-texture = ExtResource("4_yiwbf")
+texture = ExtResource("3_mcu4g")
 
 [node name="Bush2" type="Sprite2D" parent="BushesFront"]
 position = Vector2(237, 108)
-texture = ExtResource("4_yiwbf")
+texture = ExtResource("3_mcu4g")
 
 [node name="Bush3" type="Sprite2D" parent="BushesFront"]
 position = Vector2(424, 98)
-texture = ExtResource("4_yiwbf")
+texture = ExtResource("3_mcu4g")
 
 [node name="Bush4" type="Sprite2D" parent="BushesFront"]
 position = Vector2(589, 123)
-texture = ExtResource("4_yiwbf")
+texture = ExtResource("3_mcu4g")
 
 [node name="Bush6" type="Sprite2D" parent="BushesFront"]
 position = Vector2(927, 128)
-texture = ExtResource("4_yiwbf")
+texture = ExtResource("3_mcu4g")
 
 [node name="Bush8" type="Sprite2D" parent="BushesFront"]
 position = Vector2(1316, 123)
-texture = ExtResource("4_yiwbf")
+texture = ExtResource("3_mcu4g")
 
 [node name="Bush10" type="Sprite2D" parent="BushesFront"]
 position = Vector2(1759, 115)
-texture = ExtResource("4_yiwbf")
+texture = ExtResource("3_mcu4g")
 
 [node name="Bush11" type="Sprite2D" parent="BushesFront"]
 position = Vector2(1942, 117)
-texture = ExtResource("4_yiwbf")
+texture = ExtResource("3_mcu4g")
 
 [node name="Bush9" type="Sprite2D" parent="BushesFront"]
 position = Vector2(1516, 117)
-texture = ExtResource("4_yiwbf")
+texture = ExtResource("3_mcu4g")
 
 [node name="Bush7" type="Sprite2D" parent="BushesFront"]
 position = Vector2(1121, 117)
-texture = ExtResource("4_yiwbf")
+texture = ExtResource("3_mcu4g")
 
 [node name="Bush5" type="Sprite2D" parent="BushesFront"]
 position = Vector2(727, 112)
-texture = ExtResource("4_yiwbf")
+texture = ExtResource("3_mcu4g")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(177, 222)
-texture = ExtResource("5_4ru87")
+[node name="Monster" parent="." instance=ExtResource("7_e51r8")]
+position = Vector2(-12, 220)
+acceleration = 20.0
 
 [node name="Paseant" type="Sprite2D" parent="."]
 position = Vector2(446, 293)
-texture = ExtResource("6_ulh8t")
+texture = ExtResource("8_gtl23")
 
 [node name="Card01" type="Sprite2D" parent="."]
 position = Vector2(422, 90)
-texture = ExtResource("7_scmhg")
+texture = ExtResource("9_btq4r")
