@@ -66,3 +66,8 @@ func _on_animation_player_animation_finished(anim_name):
 func _on_scare_area_2d_body_entered(body):
 	if body is Paseant:
 		body.scare()
+
+
+func _on_pick_area_2d_body_entered(body):
+	if body is Card:
+		body.pick()

@@ -1,9 +1,21 @@
+class_name Card
 extends RigidBody2D
 
 @export var jump_force := 100.0
+var code = "Card01"
+
 
 func jump():
 	call_deferred("_jump_deferred")
+	
+
+func pick():
+	call_deferred("_pick_deferred")
+	
+
+func _pick_deferred():
+	Global.pick_card(self)
+	queue_free()
 	
 	
 func _jump_deferred():

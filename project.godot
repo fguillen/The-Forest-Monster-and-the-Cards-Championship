@@ -15,10 +15,15 @@ run/main_scene="res://testing/forest.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*res://autoloads/global.gd"
+
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/stretch/mode="viewport"
 
 [editor]
 
@@ -32,11 +37,14 @@ movie_writer/movie_file="/Users/fernando.guillen/Downloads/godot_movie/godot_mov
 2d_render/layer_4="monster_scare"
 2d_render/layer_5="monster_surprise"
 2d_render/layer_6="terrain"
+2d_render/layer_7="monster_pick"
 2d_physics/layer_1="monster"
 2d_physics/layer_2="paseant"
 2d_physics/layer_3="card"
 2d_physics/layer_4="monster_scare_area"
 2d_physics/layer_5="monster_surprise_area"
+2d_physics/layer_6="terrain"
+2d_physics/layer_7="monster_pick"
 
 [rendering]
 
