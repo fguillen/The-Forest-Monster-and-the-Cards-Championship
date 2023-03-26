@@ -279,7 +279,7 @@ position = Vector2(727, 112)
 texture = ExtResource("3_mcu4g")
 
 [node name="Monster" parent="." instance=ExtResource("7_e51r8")]
-position = Vector2(-12, 220)
+position = Vector2(-117, 228)
 acceleration = 20.0
 
 [node name="Paseant" type="Sprite2D" parent="."]
@@ -289,3 +289,5 @@ texture = ExtResource("8_gtl23")
 [node name="Card01" type="Sprite2D" parent="."]
 position = Vector2(422, 90)
 texture = ExtResource("9_btq4r")
+
+[editable path="Monster"]

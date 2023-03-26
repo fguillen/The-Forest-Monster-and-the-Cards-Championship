@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://bw2uayu5wox6r"]
+
+[ext_resource type="Texture2D" uid="uid://brpiahhpp7ett" path="res://assets/monster_parts/monster_body.png" id="1_2roye"]
+[ext_resource type="Texture2D" uid="uid://ba3cpg5u5in8p" path="res://assets/monster_parts/monster_face.png" id="2_avgqx"]
+[ext_resource type="Texture2D" uid="uid://ta3kv5mqprqm" path="res://assets/monster_parts/monster_arm_left.png" id="3_g53by"]
+[ext_resource type="Texture2D" uid="uid://b7g4n8e1fj266" path="res://assets/monster_parts/monster_arm_right.png" id="4_mp535"]
+[ext_resource type="Texture2D" uid="uid://c0c3o7mckqsey" path="res://assets/monster_parts/monster_leg_left.png" id="5_2csha"]
+[ext_resource type="Texture2D" uid="uid://cn0q77jq5rsgv" path="res://assets/monster_parts/monster_leg_right.png" id="6_lgsld"]
+
+[node name="MonsterRiggid2" type="Node2D"]
+
+[node name="MonsterBody" type="Sprite2D" parent="."]
+position = Vector2(423, 359)
+texture = ExtResource("1_2roye")
+offset = Vector2(0, -108)
+
+[node name="MonsterFace" type="Sprite2D" parent="MonsterBody"]
+position = Vector2(13, -128)
+texture = ExtResource("2_avgqx")
+
+[node name="MonsterArmLeft" type="Sprite2D" parent="MonsterBody"]
+position = Vector2(157, -141)
+texture = ExtResource("3_g53by")
+
+[node name="MonsterArmRight" type="Sprite2D" parent="MonsterBody"]
+position = Vector2(-159, -144)
+texture = ExtResource("4_mp535")
+
+[node name="MonsterLegLeft" type="Sprite2D" parent="."]
+position = Vector2(466, 440)
+texture = ExtResource("5_2csha")
+
+[node name="MonsterLegRight" type="Sprite2D" parent="."]
+position = Vector2(388, 436)
+texture = ExtResource("6_lgsld")
+
+[node name="Skeleton2D" type="Skeleton2D" parent="."]
+
+[node name="Hip" type="Bone2D" parent="Skeleton2D"]
+position = Vector2(428, 338)
+
+[node name="Chest" type="Bone2D" parent="Skeleton2D/Hip"]
+position = Vector2(-1, -43)
+
+[node name="Head" type="Bone2D" parent="Skeleton2D/Hip/Chest"]
+position = Vector2(-1, -144)
