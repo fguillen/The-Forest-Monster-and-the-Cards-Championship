@@ -1,4 +1,4 @@
-class_name Monster
+class_name MonsterRiggid
 extends CharacterBody2D
 
 @export var max_speed := 300.0
