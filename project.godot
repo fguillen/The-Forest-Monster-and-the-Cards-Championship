@@ -31,6 +31,7 @@ movie_writer/movie_file="/Users/fernando.guillen/Downloads/godot_movie/godot_mov
 2d_render/layer_3="card"
 2d_render/layer_4="monster_scare"
 2d_render/layer_5="monster_surprise"
+2d_render/layer_6="terrain"
 2d_physics/layer_1="monster"
 2d_physics/layer_2="paseant"
 2d_physics/layer_3="card"

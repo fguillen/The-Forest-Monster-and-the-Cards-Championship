@@ -8,5 +8,5 @@
 [node name="MonsterRiggid3" parent="." instance=ExtResource("1_lpnjs")]
 
 [node name="Paseant" parent="MonsterRiggid3" instance=ExtResource("2_84sdc")]
-position = Vector2(434, 199)
+position = Vector2(436, 196)
 speed = 0

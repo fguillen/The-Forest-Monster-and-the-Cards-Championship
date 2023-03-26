@@ -1,6 +1,8 @@
 class_name Paseant
 extends CharacterBody2D
 
+signal scared()
+
 @export var speed = 100
 @export var speed_run = 300
 @export var direction = Vector2.RIGHT
@@ -21,5 +23,6 @@ func _physics_process(delta):
 func scare():
 	animation_player.play("run")
 	_current_speed = speed_run
+	emit_signal("scared")
 	
 	

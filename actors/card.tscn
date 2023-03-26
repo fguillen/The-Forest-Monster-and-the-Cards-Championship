@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://hbv7khsd8fs0"]
+[gd_scene load_steps=7 format=3 uid="uid://hbv7khsd8fs0"]
 
+[ext_resource type="Script" path="res://actors/card.gd" id="1_d4c3w"]
 [ext_resource type="Texture2D" uid="uid://b3fykvuw6tta3" path="res://card_01.png" id="1_fc2g2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gnr57"]
@@ -91,8 +92,11 @@ _data = {
 }
 
 [node name="Card" type="RigidBody2D"]
+light_mask = 4
+visibility_layer = 32
 freeze = true
-freeze_mode = 1
+script = ExtResource("1_d4c3w")
+jump_force = 600.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 0.216101

@@ -598,3 +598,5 @@ position = Vector2(180, -44)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(175, 101)
 shape = SubResource("RectangleShape2D_rqr6o")
+
+[connection signal="scared" from="." to="Card" method="jump"]
