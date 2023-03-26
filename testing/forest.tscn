@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dl1vhd3qoyhn5"]
+[gd_scene load_steps=12 format=3 uid="uid://dl1vhd3qoyhn5"]
 
 [ext_resource type="Texture2D" uid="uid://dma22u16xh2fi" path="res://tree_02.png" id="1_j0wnd"]
 [ext_resource type="Texture2D" uid="uid://danbq0lrdd76p" path="res://tree_01.png" id="2_1j75x"]
@@ -6,10 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://bc0shb4yt2nlp" path="res://road.png" id="4_jwmf3"]
 [ext_resource type="Texture2D" uid="uid://copauticogsmb" path="res://grass.png" id="5_n1yta"]
 [ext_resource type="Texture2D" uid="uid://c671yjog7tf0o" path="res://monster.png" id="6_tv6np"]
-[ext_resource type="PackedScene" uid="uid://h4h81drr7gi7" path="res://actors/monster.tscn" id="7_e51r8"]
 [ext_resource type="Texture2D" uid="uid://bv25cwug68nnm" path="res://paseant.png" id="8_gtl23"]
 [ext_resource type="Texture2D" uid="uid://b3fykvuw6tta3" path="res://card_01.png" id="9_btq4r"]
 [ext_resource type="PackedScene" uid="uid://bp1g6f2qxumcn" path="res://actors/monster_riggid_3.tscn" id="10_fnlqw"]
+[ext_resource type="PackedScene" uid="uid://bol8dpj3j7s0x" path="res://actors/paseant.tscn" id="11_85lh6"]
+[ext_resource type="PackedScene" uid="uid://s2a7n4743ock" path="res://paseant_spawner.tscn" id="12_pby02"]
 
 [node name="Forest" type="Node2D"]
 position = Vector2(311, 143)
@@ -279,19 +280,22 @@ texture = ExtResource("3_mcu4g")
 position = Vector2(727, 112)
 texture = ExtResource("3_mcu4g")
 
-[node name="Monster" parent="." instance=ExtResource("7_e51r8")]
-visible = false
-position = Vector2(-117, 228)
-acceleration = 20.0
-
 [node name="Paseant" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(446, 293)
 texture = ExtResource("8_gtl23")
 
 [node name="Card01" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(422, 90)
 texture = ExtResource("9_btq4r")
 
 [node name="MonsterRiggid3" parent="." instance=ExtResource("10_fnlqw")]
+position = Vector2(-7, -43)
 
-[editable path="Monster"]
+[node name="Paseant2" parent="." instance=ExtResource("11_85lh6")]
+visible = false
+position = Vector2(-334, 172)
+
+[node name="PaseantSpawner" parent="." instance=ExtResource("12_pby02")]
+position = Vector2(-704, 171)
