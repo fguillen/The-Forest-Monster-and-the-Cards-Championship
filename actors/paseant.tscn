@@ -40,9 +40,9 @@ joint_data/0/bone_index = 10
 joint_data/0/bone2d_node = NodePath("Hip/LegRight/CalfRight")
 joint_data/0/rotate_from_joint = false
 joint_data/0/enable_constraint = true
-joint_data/0/constraint_angle_min = -90.566
-joint_data/0/constraint_angle_max = 359.971
-joint_data/0/constraint_angle_invert = false
+joint_data/0/constraint_angle_min = -12.395
+joint_data/0/constraint_angle_max = 96.657
+joint_data/0/constraint_angle_invert = true
 joint_data/0/constraint_in_localspace = true
 joint_data/0/editor_draw_gizmo = true
 joint_data/1/bone_index = 9
@@ -299,13 +299,13 @@ bone_angle = 0.0
 position = Vector2(0, 31)
 
 [node name="TargetArmRight" type="Marker2D" parent="."]
-position = Vector2(79, 96)
+position = Vector2(70, 86)
 
 [node name="TargetArmLeft" type="Marker2D" parent="."]
 position = Vector2(283, 77)
 
 [node name="TargetLegRight" type="Marker2D" parent="."]
-position = Vector2(147, 217)
+position = Vector2(143, 220)
 
 [node name="TargetLegLeft" type="Marker2D" parent="."]
 position = Vector2(186, 225)
