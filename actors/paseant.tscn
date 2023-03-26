@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bol8dpj3j7s0x"]
+[gd_scene load_steps=10 format=3 uid="uid://bol8dpj3j7s0x"]
 
 [ext_resource type="Texture2D" uid="uid://jk8s64it8rgt" path="res://assets/paseant/paseant.png" id="1_j54ba"]
 
@@ -80,10 +80,135 @@ modifications/3 = SubResource("SkeletonModification2DCCDIK_v73jr")
 
 [sub_resource type="Animation" id="Animation_a0w42"]
 resource_name = "walk"
-length = 2.0
+length = 1.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TargetLegLeft:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(182, 221), Vector2(186, 215), Vector2(198, 206), Vector2(203, 221)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TargetArmRight:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(152, 148), Vector2(162, 135)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TargetArmLeft:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 1.22367, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(211, 145), Vector2(222, 133), Vector2(215.29, 141.947), Vector2(210, 149)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TargetLegRight:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(155, 220), Vector2(147, 203), Vector2(158, 222)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Polygons/Skeleton2D/Hip:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.2, 0.6, 0.8, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(177, 144), Vector2(180, 151), Vector2(180, 142), Vector2(180, 148)]
+}
+
+[sub_resource type="Animation" id="Animation_204a0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TargetLegLeft:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(182, 221)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TargetArmRight:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(152, 148)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TargetArmLeft:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(211, 145)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TargetLegRight:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(155, 220)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Polygons/Skeleton2D/Hip:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(177, 148)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2ofi3"]
 _data = {
+"RESET": SubResource("Animation_204a0"),
 "walk": SubResource("Animation_a0w42")
 }
 
@@ -299,16 +424,16 @@ bone_angle = 0.0
 position = Vector2(0, 31)
 
 [node name="TargetArmRight" type="Marker2D" parent="."]
-position = Vector2(70, 86)
+position = Vector2(152, 148)
 
 [node name="TargetArmLeft" type="Marker2D" parent="."]
-position = Vector2(283, 77)
+position = Vector2(211, 145)
 
 [node name="TargetLegRight" type="Marker2D" parent="."]
-position = Vector2(143, 220)
+position = Vector2(155, 220)
 
 [node name="TargetLegLeft" type="Marker2D" parent="."]
-position = Vector2(186, 225)
+position = Vector2(182, 221)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
