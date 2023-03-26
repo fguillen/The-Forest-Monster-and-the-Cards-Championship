@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dd8jx8wdkq2ov"]
+
+[ext_resource type="PackedScene" uid="uid://bp1g6f2qxumcn" path="res://actors/monster_riggid_3.tscn" id="1_lpnjs"]
+[ext_resource type="PackedScene" uid="uid://bol8dpj3j7s0x" path="res://actors/paseant.tscn" id="2_84sdc"]
+
+[node name="SceneTest_MonsterAndPaseant" type="Node2D"]
+
+[node name="MonsterRiggid3" parent="." instance=ExtResource("1_lpnjs")]
+
+[node name="Paseant" parent="MonsterRiggid3" instance=ExtResource("2_84sdc")]
+position = Vector2(434, 199)
+speed = 0

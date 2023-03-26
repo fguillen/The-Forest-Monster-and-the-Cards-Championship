@@ -61,3 +61,8 @@ func _set_state_scare():
 func _on_animation_player_animation_finished(anim_name):
 	if _state == "scare":
 		_set_state_idle()
+
+
+func _on_scare_area_2d_body_entered(body):
+	if body is Paseant:
+		body.scare()
