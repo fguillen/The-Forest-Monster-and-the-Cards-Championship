@@ -100,13 +100,37 @@ modifications/3 = SubResource("SkeletonModification2DCCDIK_p70xl")
 [node name="Card" parent="Node2D" instance=ExtResource("1_2espr")]
 position = Vector2(532, 142)
 gravity_scale = 2.0
-jump_force = 600.0
 
 [node name="Paseant" parent="." instance=ExtResource("2_dhd03")]
 position = Vector2(-91, 185)
 
 [node name="Skeleton2D" parent="Paseant/Polygons" index="12"]
 modification_stack = SubResource("SkeletonModificationStack2D_a75j7")
+
+[node name="ArmRight" parent="Paseant/Polygons/Skeleton2D/Hip" index="1"]
+metadata/_local_pose_override_enabled_ = true
+
+[node name="ForearmRight" parent="Paseant/Polygons/Skeleton2D/Hip/ArmRight" index="0"]
+metadata/_local_pose_override_enabled_ = true
+
+[node name="ArmLeft" parent="Paseant/Polygons/Skeleton2D/Hip" index="2"]
+metadata/_local_pose_override_enabled_ = true
+
+[node name="ForearmLeft" parent="Paseant/Polygons/Skeleton2D/Hip/ArmLeft" index="0"]
+metadata/_local_pose_override_enabled_ = true
+
+[node name="LegRight" parent="Paseant/Polygons/Skeleton2D/Hip" index="3"]
+metadata/_local_pose_override_enabled_ = true
+
+[node name="CalfRight" parent="Paseant/Polygons/Skeleton2D/Hip/LegRight" index="0"]
+scale = Vector2(0.999977, 0.999977)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="LegLeft" parent="Paseant/Polygons/Skeleton2D/Hip" index="4"]
+metadata/_local_pose_override_enabled_ = true
+
+[node name="CalfLeft" parent="Paseant/Polygons/Skeleton2D/Hip/LegLeft" index="0"]
+metadata/_local_pose_override_enabled_ = true
 
 [node name="MonsterRiggid3" parent="." instance=ExtResource("3_sxduw")]
 
