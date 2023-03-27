@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dan1pdgr76ole"]
+
+[ext_resource type="Script" path="res://actors/card_combat.gd" id="1_3km6i"]
+[ext_resource type="Texture2D" uid="uid://b3fykvuw6tta3" path="res://card_01.png" id="1_bc4hy"]
+[ext_resource type="Texture2D" uid="uid://s3itu3txlik0" path="res://assets/card_reverse.png" id="2_i0fd0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_de7aq"]
+size = Vector2(91, 140)
+
+[node name="CardCombat" type="Control"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_3km6i")
+
+[node name="Front" type="Sprite2D" parent="."]
+texture = ExtResource("1_bc4hy")
+
+[node name="Back" type="Sprite2D" parent="."]
+texture = ExtResource("2_i0fd0")
+
+[node name="ClickArea2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea2D"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_de7aq")
