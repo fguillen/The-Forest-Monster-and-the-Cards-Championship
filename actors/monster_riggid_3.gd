@@ -6,10 +6,13 @@ signal card_picked()
 signal in_hidden()
 signal in_unhidden()
 signal walk_started()
+signal walk_hidden_started()
 signal idle_started()
+signal idle_hidden_started()
 signal scare_started()
 
 @export var max_speed := 100.0
+@export var max_speed_hidden := 50.0
 @export var acceleration := 50.0
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -17,12 +20,15 @@ signal scare_started()
 @onready var visuals_hidden: CanvasItem = $VisualsHidden
 
 
+var _current_max_speed: float
 var _state := "idle"
-var _hidden := true
+var _hidden := false
 var _direction := 0.0
 var _deck_filled := false
 
 func _ready():
+	_current_max_speed = max_speed
+	
 	_set_state_idle()
 	_set_state_hidden()
 	
@@ -33,7 +39,7 @@ func _physics_process(delta):
 	# Move if not scaring
 	if not _state == "scare":
 		_direction = Input.get_axis("ui_left", "ui_right")
-		var max_velocity = Vector2(_direction * max_speed, 0)
+		var max_velocity = Vector2(_direction * _current_max_speed, 0)
 		velocity = velocity.lerp(max_velocity, acceleration * delta)
 		move_and_slide()
 		if _direction:
@@ -57,40 +63,62 @@ func _physics_process(delta):
 		
 
 func _set_state_hidden():
+	if _hidden == true:
+		return
+
+	print("Monster._set_state_hidden()")
 	_hidden = true
 	visuals.visible = false
 	visuals_hidden.visible = true
+	_current_max_speed = max_speed_hidden
 	emit_signal("in_hidden")
 	
 	
 func _set_state_unhidden():
+	if _hidden == false:
+		return
+	
+	print("Monster._set_state_unhidden()")
 	_hidden = false
 	visuals.visible = true
 	visuals_hidden.visible = false
+	_current_max_speed = max_speed
 	emit_signal("in_unhidden")
 
 
 func _set_state_idle():
+	if _state == "idle":
+		return
+		
+	print("Monster._set_state_idle()")
 	_state = "idle"
 	if _hidden:
 		animation_player.play("idle_hidden")
+		emit_signal("idle_hidden_started")
 	else: 
 		animation_player.play("idle")
+		emit_signal("idle_started")
 		
-	emit_signal("idle_started")
-	
 	
 func _set_state_walk():
+	if _state == "walk":
+		return
+	
+	print("Monster._set_state_walk()")
 	_state = "walk"
 	if _hidden:
 		animation_player.play("walk_hidden")
+		emit_signal("walk_hidden_started")
 	else: 
 		animation_player.play("walk")
-		
-	emit_signal("walk_started")
+		emit_signal("walk_started")
 
 
 func _set_state_scare():
+	if _state == "scare":
+		return
+	
+	print("Monster._set_state_scare()")
 	_state = "scare"
 	animation_player.play("scare")
 	emit_signal("scare_started")
