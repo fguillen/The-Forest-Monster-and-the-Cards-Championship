@@ -279,7 +279,7 @@ position = Vector2(727, 112)
 texture = ExtResource("3_mcu4g")
 
 [node name="MonsterRiggid3" parent="." instance=ExtResource("10_fnlqw")]
-position = Vector2(-7, -43)
+position = Vector2(-7, 357)
 
 [node name="PaseantSpawner" parent="." instance=ExtResource("12_pby02")]
 position = Vector2(-704, 171)

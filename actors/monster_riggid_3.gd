@@ -7,7 +7,8 @@ extends CharacterBody2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
-var _state = "idle"
+var _state := "idle"
+var _direction := 0.0
 
 func _ready():
 	_set_state_idle()
@@ -16,12 +17,13 @@ func _ready():
 func _physics_process(delta):
 	# Move if not scaring
 	if not _state == "scare":
-		var direction = Input.get_axis("ui_left", "ui_right")
-		var max_velocity = Vector2(direction * max_speed, 0)
+		_direction = Input.get_axis("ui_left", "ui_right")
+		var max_velocity = Vector2(_direction * max_speed, 0)
 		velocity = velocity.lerp(max_velocity, acceleration * delta)
 		move_and_slide()
-		if direction:
+		if _direction:
 			_set_state_walk()
+#			_flip_towards_direction()
 		else:
 			_set_state_idle()
 	
@@ -37,6 +39,8 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		_set_state_scare()
 		
+	
+	
 
 func _set_state_hidden():
 	_state = "hidden"
@@ -71,3 +75,10 @@ func _on_scare_area_2d_body_entered(body):
 func _on_pick_area_2d_body_entered(body):
 	if body is Card:
 		body.pick()
+
+
+func _flip_towards_direction():
+	var direction_sign = sign(_direction)
+	print("direction_sign: ", direction_sign)
+	if not direction_sign == 0 and not scale.x == direction_sign:
+		scale = Vector2(direction_sign, 1)

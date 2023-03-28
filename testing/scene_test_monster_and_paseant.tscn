@@ -8,11 +8,12 @@ size = Vector2(1001, 55)
 
 [node name="SceneTest_MonsterAndPaseant" type="Node2D"]
 
-[node name="MonsterRiggid3" parent="." instance=ExtResource("1_lpnjs")]
-
-[node name="Paseant" parent="MonsterRiggid3" instance=ExtResource("2_84sdc")]
+[node name="Paseant" parent="." instance=ExtResource("2_84sdc")]
 position = Vector2(436, 196)
 speed = 0
+
+[node name="MonsterRiggid3" parent="." instance=ExtResource("1_lpnjs")]
+position = Vector2(264, 429)
 
 [node name="Ground" type="StaticBody2D" parent="."]
 visibility_layer = 0
