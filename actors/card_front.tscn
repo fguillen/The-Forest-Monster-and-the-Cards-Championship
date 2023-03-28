@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://wrrjemm28jyp"]
+
+[ext_resource type="Script" path="res://actors/card_front.gd" id="1_f0gaq"]
+[ext_resource type="Texture2D" uid="uid://se4xdsrpibqu" path="res://assets/card_front.png" id="1_vca53"]
+
+[node name="CardFront" type="Node2D"]
+script = ExtResource("1_f0gaq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vca53")
+
+[node name="AttackLabel" type="Label" parent="."]
+offset_left = 4.0
+offset_top = -48.0
+offset_right = 33.0
+offset_bottom = -12.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DefenseLabel" type="Label" parent="."]
+offset_left = 4.0
+offset_top = 5.0
+offset_right = 33.0
+offset_bottom = 57.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1

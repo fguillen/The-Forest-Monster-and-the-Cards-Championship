@@ -2,7 +2,17 @@ class_name Card
 extends RigidBody2D
 
 @export var jump_force := 100.0
+
+@onready var card_front: CardFront = %CardFront
+
 var code = "Card01"
+var value: CardValue
+
+
+
+func setup(card_value: CardValue):
+	value = card_value
+	card_front.setup(card_value)
 
 
 func jump():
@@ -14,7 +24,7 @@ func pick():
 	
 
 func _pick_deferred():
-	Global.pick_card(self)
+	Global.pick_card(self.value)
 	queue_free()
 	
 	

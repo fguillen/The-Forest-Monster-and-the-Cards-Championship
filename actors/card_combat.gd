@@ -4,12 +4,14 @@ extends Control
 signal selected(card_combat: CardCombat)
 
 @onready var click_area: Area2D = $ClickArea2D
+@onready var card_front: CardFront = $CardFront
 
 var value: CardValue
 
 
 func setup(card_value: CardValue):
-	self.value = card_value
+	value = card_value
+	card_front.setup(card_value)
 	
 	
 func reparent_and_jump(new_parent: Node2D):

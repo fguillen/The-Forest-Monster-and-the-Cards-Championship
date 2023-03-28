@@ -43,10 +43,14 @@ func select_card(card_combat: CardCombat, card_placeholder: Node2D):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var card_value = CardValue.new()
-	for i in 4:
+	for card_value in Global.picked_cards:
 		card_values_monster.append(card_value)
-		card_values_oponent.append(card_value)
+	
+	for i in 4:
+		var random_card_value = CardValue.new()
+		random_card_value.attack = randi_range(0, 9)
+		random_card_value.defense = randi_range(0, 9)
+		card_values_oponent.append(random_card_value)
 		
 	_set_up_decks()
 
@@ -54,16 +58,16 @@ func _ready():
 func _set_up_decks():
 	for card_value in card_values_monster:
 		var card_combat := card_combat_scene.instantiate() as CardCombat
-		card_combat.setup(card_value)
 		cards_monster.append(card_combat)
 		deck_container_monster.add_child(card_combat)
+		card_combat.setup(card_value)
 		card_combat.selected.connect(select_card.bind(card_placeholder_monster))
 		
 	for card_value in card_values_oponent:
 		var card_combat := card_combat_scene.instantiate() as CardCombat
-		card_combat.setup(card_value)
 		cards_oponent.append(card_combat)
 		deck_container_oponent.add_child(card_combat)
+		card_combat.setup(card_value)
 #		card_combat.selected.connect(select_card.bind(card_placeholder_oponent))
 
 
@@ -93,6 +97,8 @@ func _combat(card_combat_monster: CardCombat, card_combat_oponent: CardCombat):
 		# Clean
 		monster_card_in_placeholder = null
 		oponent_card_in_placeholder = null
+		cards_monster.erase(card_combat_monster)
+		cards_oponent.erase(card_combat_oponent)
 		card_combat_monster.queue_free()
 		card_combat_oponent.queue_free()
 		
@@ -102,7 +108,7 @@ func _attack(card_combat_attack: CardCombat, card_combat_deffend: CardCombat):
 	var tween = get_tree().create_tween()
 	tween.tween_property(card_combat_attack, "global_position", card_combat_deffend.global_position, 0.5)
 	await tween.finished
-	if card_combat_attack.value.attack >= card_combat_deffend.value.deffense:
+	if card_combat_attack.value.attack >= card_combat_deffend.value.defense:
 		return true
 	else:
 		return false
