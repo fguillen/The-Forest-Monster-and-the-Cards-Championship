@@ -501,10 +501,12 @@ bone_angle = -90.0
 [node name="ArmRight" type="Bone2D" parent="Polygons/Skeleton2D/Hip"]
 position = Vector2(-25, -73)
 rest = Transform2D(1, 0, 0, 1, -25, -73)
+metadata/_local_pose_override_enabled_ = true
 
 [node name="ForearmRight" type="Bone2D" parent="Polygons/Skeleton2D/Hip/ArmRight"]
 position = Vector2(-35, 2)
 rest = Transform2D(1, 0, 0, 1, -35, 2)
+metadata/_local_pose_override_enabled_ = true
 
 [node name="HandRight" type="Bone2D" parent="Polygons/Skeleton2D/Hip/ArmRight/ForearmRight"]
 position = Vector2(-45, 2)
@@ -520,11 +522,13 @@ position = Vector2(-44, 2)
 position = Vector2(19, -73)
 rotation = -0.0239745
 rest = Transform2D(0.999713, -0.0239722, 0.0239722, 0.999713, 19, -73)
+metadata/_local_pose_override_enabled_ = true
 
 [node name="ForearmLeft" type="Bone2D" parent="Polygons/Skeleton2D/Hip/ArmLeft"]
 position = Vector2(40, 0)
 rotation = -0.0246668
 rest = Transform2D(0.999696, -0.0246643, 0.0246643, 0.999696, 40, 0)
+metadata/_local_pose_override_enabled_ = true
 
 [node name="HandLeft" type="Bone2D" parent="Polygons/Skeleton2D/Hip/ArmLeft/ForearmLeft"]
 position = Vector2(45.0089, 1.14867)
@@ -539,12 +543,14 @@ position = Vector2(41, -1)
 [node name="LegRight" type="Bone2D" parent="Polygons/Skeleton2D/Hip"]
 position = Vector2(-16, 9)
 rest = Transform2D(1, 0, 0, 1, -16, 9)
+metadata/_local_pose_override_enabled_ = true
 
 [node name="CalfRight" type="Bone2D" parent="Polygons/Skeleton2D/Hip/LegRight"]
 position = Vector2(3.00128, 34.0025)
 rotation = -0.741765
 scale = Vector2(0.999977, 0.999977)
 rest = Transform2D(1, 0, 0, 1, 3, 34)
+metadata/_local_pose_override_enabled_ = true
 
 [node name="FootRight" type="Bone2D" parent="Polygons/Skeleton2D/Hip/LegRight/CalfRight"]
 position = Vector2(0, 31)
@@ -559,10 +565,12 @@ position = Vector2(0, 31)
 [node name="LegLeft" type="Bone2D" parent="Polygons/Skeleton2D/Hip"]
 position = Vector2(12, 11)
 rest = Transform2D(1, 0, 0, 1, 12, 11)
+metadata/_local_pose_override_enabled_ = true
 
 [node name="CalfLeft" type="Bone2D" parent="Polygons/Skeleton2D/Hip/LegLeft"]
 position = Vector2(3, 34)
 rest = Transform2D(1, 0, 0, 1, 3, 34)
+metadata/_local_pose_override_enabled_ = true
 
 [node name="FootLeft" type="Bone2D" parent="Polygons/Skeleton2D/Hip/LegLeft/CalfLeft"]
 position = Vector2(0, 31)
@@ -593,7 +601,8 @@ libraries = {
 }
 
 [node name="Card" parent="." instance=ExtResource("3_hied0")]
-position = Vector2(180, -44)
+position = Vector2(176, -21)
+scale = Vector2(0.7, 0.7)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(175, 101)
