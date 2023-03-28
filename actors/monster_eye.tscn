@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddy4qet74njq3"]
+
+[ext_resource type="Script" path="res://actors/MonsterEye.gd" id="1_kilnv"]
+[ext_resource type="Texture2D" uid="uid://dywfopuupnh7q" path="res://assets/monster_parts/monster_pupil.png" id="2_sn2pn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dkufb"]
+size = Vector2(424, 20)
+
+[node name="MonsterEye" type="Node2D"]
+script = ExtResource("1_kilnv")
+
+[node name="Pupil" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+texture = ExtResource("2_sn2pn")
+
+[node name="EyeLimitLeft" type="Marker2D" parent="."]
+
+[node name="EyeLimitRight" type="Marker2D" parent="."]
+position = Vector2(15, 0)
+
+[node name="PaseantLimitLeft" type="Marker2D" parent="."]
+position = Vector2(-9, 214)
+
+[node name="PaseantLimitRight" type="Marker2D" parent="."]
+position = Vector2(412, 214)
+metadata/_edit_lock_ = true
+
+[node name="PaseantsSensor" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PaseantsSensor"]
+position = Vector2(202, 214)
+shape = SubResource("RectangleShape2D_dkufb")
