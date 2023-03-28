@@ -25,12 +25,18 @@ var _state := "idle"
 var _hidden := false
 var _direction := 0.0
 var _deck_filled := false
+var _hidden_canvas_layer: Node
+var _unhidden_canvas_layer: Node
 
 func _ready():
 	_current_max_speed = max_speed
+	_unhidden_canvas_layer = get_parent()
+	_hidden_canvas_layer = get_tree().get_first_node_in_group("hidden_canvas_layer")
+	
+	print("_hidden_canvas_layer", _hidden_canvas_layer)
 	
 	_set_state_idle()
-	_set_state_hidden()
+	call_deferred("_set_state_hidden")
 	
 	Global.deck_filled.connect(_on_deck_filled)
 	
@@ -71,6 +77,15 @@ func _set_state_hidden():
 	visuals.visible = false
 	visuals_hidden.visible = true
 	_current_max_speed = max_speed_hidden
+	
+	# Change layer
+	if _hidden_canvas_layer:
+		var actual_position = global_position
+		get_parent().remove_child(self)
+		_hidden_canvas_layer.add_child(self)
+		global_position = actual_position
+	
+	
 	emit_signal("in_hidden")
 	
 	
@@ -83,6 +98,14 @@ func _set_state_unhidden():
 	visuals.visible = true
 	visuals_hidden.visible = false
 	_current_max_speed = max_speed
+	
+	# Change layer
+	if not get_parent() == _unhidden_canvas_layer:
+		var actual_position = global_position
+		get_parent().remove_child(self)
+		_unhidden_canvas_layer.add_child(self)
+		global_position = actual_position
+		
 	emit_signal("in_unhidden")
 
 

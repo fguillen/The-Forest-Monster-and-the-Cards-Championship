@@ -75,14 +75,15 @@ libraries = {
 }
 
 [node name="BackgroundCanvasLayer" type="CanvasLayer" parent="."]
-layer = -2
+layer = -3
 
 [node name="Background" type="Sprite2D" parent="BackgroundCanvasLayer"]
 z_index = -200
 position = Vector2(822, 312)
 texture = ExtResource("1_lvy1g")
 
-[node name="EyesCanvasLayer" type="CanvasLayer" parent="."]
+[node name="HiddenCanvasLayer" type="CanvasLayer" parent="." groups=["hidden_canvas_layer"]]
+layer = -2
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 layer = -1
@@ -313,10 +314,14 @@ position = Vector2(787, 720)
 texture = ExtResource("3_mcu4g")
 
 [node name="MonsterRiggid3" parent="." instance=ExtResource("10_fnlqw")]
-position = Vector2(-7, 357)
+position = Vector2(-7, 391)
 
 [node name="PaseantSpawner" parent="." instance=ExtResource("12_pby02")]
-position = Vector2(-704, 171)
+z_index = 1
+position = Vector2(-704, 214)
+
+[node name="Paseant" parent="PaseantSpawner" instance=ExtResource("11_85lh6")]
+position = Vector2(1003, -16)
 
 [node name="Ground" type="StaticBody2D" parent="."]
 collision_layer = 32
@@ -327,9 +332,6 @@ position = Vector2(497.5, 498)
 shape = SubResource("RectangleShape2D_5bdbm")
 
 [node name="ForestDeck" parent="." instance=ExtResource("12_uq5et")]
-
-[node name="Paseant" parent="." instance=ExtResource("11_85lh6")]
-position = Vector2(299, 155)
 
 [node name="Effects" type="Node2D" parent="."]
 
