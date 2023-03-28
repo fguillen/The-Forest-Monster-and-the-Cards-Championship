@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bp1g6f2qxumcn"]
+[gd_scene load_steps=29 format=3 uid="uid://bp1g6f2qxumcn"]
 
 [ext_resource type="Script" path="res://actors/monster_riggid_3.gd" id="1_7hx8i"]
 [ext_resource type="Texture2D" uid="uid://brpiahhpp7ett" path="res://assets/monster_parts/monster_body.png" id="1_ym1rq"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://eu8diidae1j0" path="res://assets/monster_parts/monster_face_hidden.png" id="9_chbjv"]
 [ext_resource type="PackedScene" uid="uid://vb6a1yxef6do" path="res://effects/effect_sound.tscn" id="10_8fhx0"]
 [ext_resource type="AudioStream" uid="uid://d3irnt2c010k5" path="res://assets/sounds/pickup_card.wav" id="11_o1fjh"]
+[ext_resource type="AudioStream" uid="uid://dsa8tpwq08qqe" path="res://assets/sounds/monster_scare.wav" id="12_o4mum"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1rinp"]
 size = Vector2(147, 284)
@@ -746,7 +747,12 @@ position = Vector2(-58.1629, -155.98)
 [node name="CardPickedEffectSound" parent="Effects" instance=ExtResource("10_8fhx0")]
 stream = ExtResource("11_o1fjh")
 
+[node name="ScareEffectSound" parent="Effects" instance=ExtResource("10_8fhx0")]
+stream = ExtResource("12_o4mum")
+
 [connection signal="card_picked" from="." to="Effects/CardPickedEffectSound" method="perform"]
+[connection signal="idle_started" from="." to="Effects/ScareEffectSound" method="finish"]
+[connection signal="scare_started" from="." to="Effects/ScareEffectSound" method="perform"]
 [connection signal="body_entered" from="ScareArea2D" to="." method="_on_scare_area_2d_body_entered"]
 [connection signal="body_entered" from="PickArea2D" to="." method="_on_pick_area_2d_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
