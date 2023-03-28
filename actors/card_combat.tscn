@@ -8,21 +8,36 @@
 size = Vector2(91, 140)
 
 [node name="CardCombat" type="Control"]
-custom_minimum_size = Vector2(100, 0)
+custom_minimum_size = Vector2(100, 160)
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -80.0
+offset_right = 50.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 script = ExtResource("1_3km6i")
 
 [node name="Front" type="Sprite2D" parent="."]
+position = Vector2(50, 80)
 texture = ExtResource("1_bc4hy")
 
 [node name="Back" type="Sprite2D" parent="."]
+position = Vector2(50, 80)
 texture = ExtResource("2_i0fd0")
 
 [node name="ClickArea2D" type="Area2D" parent="."]
+position = Vector2(50, 80)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea2D"]
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_de7aq")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
