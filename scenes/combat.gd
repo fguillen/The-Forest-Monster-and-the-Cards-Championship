@@ -43,6 +43,8 @@ func select_card(card_combat: CardCombat, card_placeholder: Node2D):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Global.was_a_win = false
+	
 	for card_value in Global.picked_cards:
 		card_values_monster.append(card_value)
 	
@@ -105,6 +107,11 @@ func _combat(card_combat_monster: CardCombat, card_combat_oponent: CardCombat):
 		cards_oponent.erase(card_combat_oponent)
 		card_combat_monster.queue_free()
 		card_combat_oponent.queue_free()
+		
+		# End?
+		if cards_monster.is_empty():
+			Global.was_a_win = points_monster >= points_oponent
+			get_tree().change_scene_to_file("res://scenes/end_scene.tscn")
 		
 		
 		

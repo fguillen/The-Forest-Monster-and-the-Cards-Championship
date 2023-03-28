@@ -1,12 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://b84qhmcgfb5kk"]
+[gd_scene load_steps=5 format=3 uid="uid://b84qhmcgfb5kk"]
 
 [ext_resource type="Script" path="res://scenes/combat.gd" id="1_lato3"]
 [ext_resource type="Texture2D" uid="uid://d4jsoifyfwa0t" path="res://assets/card_placeholder.png" id="2_wnku4"]
 [ext_resource type="PackedScene" uid="uid://dan1pdgr76ole" path="res://actors/card_combat.tscn" id="3_hthjm"]
+[ext_resource type="Texture2D" uid="uid://ut88doou417q" path="res://assets/forest_background.png" id="3_qa1il"]
 
 [node name="Combat" type="CanvasLayer"]
 script = ExtResource("1_lato3")
 card_combat_scene = ExtResource("3_hthjm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(580, 363)
+texture = ExtResource("3_qa1il")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 7

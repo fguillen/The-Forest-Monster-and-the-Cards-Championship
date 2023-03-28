@@ -25,8 +25,8 @@ func _process(delta):
 
 		
 func _closest_node(nodes: Array[Node2D]) -> Node2D:
-	nodes.sort_custom(func(node):
-		return global_position.distance_squared_to(node.global_position)
+	nodes.sort_custom(func(node_a, node_b):
+		return global_position.distance_squared_to(node_a.global_position) < global_position.distance_squared_to(node_b.global_position)
 	)
 	return nodes[0]
 		
