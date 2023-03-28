@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dl1vhd3qoyhn5"]
+[gd_scene load_steps=16 format=3 uid="uid://dl1vhd3qoyhn5"]
 
 [ext_resource type="Texture2D" uid="uid://dma22u16xh2fi" path="res://tree_02.png" id="1_j0wnd"]
 [ext_resource type="Texture2D" uid="uid://ut88doou417q" path="res://assets/forest_background.png" id="1_lvy1g"]
@@ -11,6 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://bol8dpj3j7s0x" path="res://actors/paseant.tscn" id="11_85lh6"]
 [ext_resource type="PackedScene" uid="uid://s2a7n4743ock" path="res://paseant_spawner.tscn" id="12_pby02"]
 [ext_resource type="PackedScene" uid="uid://cufupnieqm5ot" path="res://ui/forest_deck.tscn" id="12_uq5et"]
+[ext_resource type="PackedScene" uid="uid://vb6a1yxef6do" path="res://effects/effect_sound.tscn" id="12_vhvwt"]
+[ext_resource type="AudioStream" uid="uid://bm2tt43h2sgo5" path="res://assets/sounds/forest_background_noise.wav" id="13_6v4su"]
+[ext_resource type="AudioStream" uid="uid://biylpgfmqlf71" path="res://assets/sounds/forest_background_music.wav" id="14_lyssg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5bdbm"]
 size = Vector2(2445, 160)
@@ -299,3 +302,15 @@ shape = SubResource("RectangleShape2D_5bdbm")
 
 [node name="Paseant" parent="." instance=ExtResource("11_85lh6")]
 position = Vector2(299, 155)
+
+[node name="Effects" type="Node2D" parent="."]
+
+[node name="BackgroundNoiseEffectSound" parent="Effects" instance=ExtResource("12_vhvwt")]
+stream = ExtResource("13_6v4su")
+volume_db = -10.0
+autoplay = true
+
+[node name="BackgroundMusicEffectSound" parent="Effects" instance=ExtResource("12_vhvwt")]
+stream = ExtResource("14_lyssg")
+volume_db = -6.0
+autoplay = true
