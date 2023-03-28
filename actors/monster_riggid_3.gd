@@ -5,9 +5,12 @@ extends CharacterBody2D
 @export var acceleration := 50.0
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var visuals: CanvasItem = $Visuals
+@onready var visuals_hidden: CanvasItem = $VisualsHidden
 
 
 var _state := "idle"
+var _hidden := true
 var _direction := 0.0
 
 func _ready():
@@ -33,28 +36,40 @@ func _physics_process(delta):
 		
 	# Unhide
 	if Input.is_action_just_pressed("ui_down"):
-		_set_state_idle()
+		_set_state_unhidden()
 		
 	# Scare
-	if Input.is_action_just_pressed("ui_accept"):
-		_set_state_scare()
+	if not _hidden:
+		if Input.is_action_just_pressed("ui_accept"):
+			_set_state_scare()
 		
-	
-	
 
 func _set_state_hidden():
-	_state = "hidden"
-#	animation_player.play("hidden")
+	_hidden = true
+	visuals.visible = false
+	visuals_hidden.visible = true
+	
+	
+func _set_state_unhidden():
+	_hidden = false
+	visuals.visible = true
+	visuals_hidden.visible = false
 
 
 func _set_state_idle():
 	_state = "idle"
-	animation_player.play("idle")
+	if _hidden:
+		animation_player.play("idle_hidden")
+	else: 
+		animation_player.play("idle")
 	
 	
 func _set_state_walk():
 	_state = "walk"
-	animation_player.play("walk")
+	if _hidden:
+		animation_player.play("walk_hidden")
+	else: 
+		animation_player.play("walk")
 
 
 func _set_state_scare():

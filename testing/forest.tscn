@@ -16,10 +16,11 @@
 size = Vector2(2445, 160)
 
 [node name="Forest" type="Node2D"]
-position = Vector2(311, 143)
+position = Vector2(306, 143)
 script = ExtResource("1_qdmn8")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -100
 position = Vector2(516, 169)
 texture = ExtResource("1_lvy1g")
 

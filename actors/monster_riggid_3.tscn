@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bp1g6f2qxumcn"]
+[gd_scene load_steps=26 format=3 uid="uid://bp1g6f2qxumcn"]
 
 [ext_resource type="Script" path="res://actors/monster_riggid_3.gd" id="1_7hx8i"]
 [ext_resource type="Texture2D" uid="uid://brpiahhpp7ett" path="res://assets/monster_parts/monster_body.png" id="1_ym1rq"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c0c3o7mckqsey" path="res://assets/monster_parts/monster_leg_left.png" id="5_hkef2"]
 [ext_resource type="Texture2D" uid="uid://cn0q77jq5rsgv" path="res://assets/monster_parts/monster_leg_right.png" id="6_2hjfb"]
 [ext_resource type="PackedScene" uid="uid://ddy4qet74njq3" path="res://actors/monster_eye.tscn" id="8_3d5bx"]
+[ext_resource type="Texture2D" uid="uid://eu8diidae1j0" path="res://assets/monster_parts/monster_face_hidden.png" id="9_chbjv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1rinp"]
 size = Vector2(147, 284)
@@ -119,6 +120,30 @@ tracks/7/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("VisualsHidden:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("VisualsHidden:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_mur5k"]
 resource_name = "idle"
@@ -195,6 +220,23 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(-1, -67), Vector2(-1, -49), Vector2(-1, -67)]
+}
+
+[sub_resource type="Animation" id="Animation_8w6g1"]
+resource_name = "idle_hidden"
+length = 1.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualsHidden:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.334458, 0.417863, 0.9, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -4), Vector2(-0.779497, -5.45648), Vector2(-1, -7), Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_yhfqt"]
@@ -325,12 +367,43 @@ tracks/4/keys = {
 "values": [Vector2(369, 430), Vector2(383, 401), Vector2(421, 412), Vector2(436, 433)]
 }
 
+[sub_resource type="Animation" id="Animation_ad8x2"]
+resource_name = "walk_hidden"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualsHidden:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-1, -16), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VisualsHidden:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0349066, 0.0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_axk63"]
 _data = {
 "RESET": SubResource("Animation_a5btl"),
 "idle": SubResource("Animation_mur5k"),
+"idle_hidden": SubResource("Animation_8w6g1"),
 "scare": SubResource("Animation_yhfqt"),
-"walk": SubResource("Animation_kj2n8")
+"walk": SubResource("Animation_kj2n8"),
+"walk_hidden": SubResource("Animation_ad8x2")
 }
 
 [sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_pkamm"]
@@ -518,11 +591,11 @@ bones = ["Hip", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/Che
 modification_stack = SubResource("SkeletonModificationStack2D_a8751")
 
 [node name="Hip" type="Bone2D" parent="Visuals/Polygons/Skeleton2D"]
-position = Vector2(343, 285)
+position = Vector2(339, 276)
 rest = Transform2D(1, 0, 0, 1, 339, 276)
 
 [node name="Chest" type="Bone2D" parent="Visuals/Polygons/Skeleton2D/Hip"]
-position = Vector2(2, -66)
+position = Vector2(-1, -67)
 rest = Transform2D(1, 0, 0, 1, -1, -67)
 
 [node name="Head" type="Bone2D" parent="Visuals/Polygons/Skeleton2D/Hip/Chest"]
@@ -549,6 +622,7 @@ position = Vector2(-74, -86)
 rotation = -1.40045
 scale = Vector2(0.999986, 0.999986)
 rest = Transform2D(0.993538, 0.113377, -0.113377, 0.993538, -74, -86)
+metadata/_local_pose_override_enabled_ = true
 
 [node name="ForeArmRight" type="Bone2D" parent="Visuals/Polygons/Skeleton2D/Hip/Chest/ArmRight"]
 position = Vector2(-83.0036, 3.00098)
@@ -557,6 +631,7 @@ rest = Transform2D(0.999672, 0.0257261, -0.0257261, 0.999672, -83.0036, 3.00098)
 auto_calculate_length_and_angle = false
 length = 60.0
 bone_angle = -180.0
+metadata/_local_pose_override_enabled_ = true
 
 [node name="TipArmRight" type="Node2D" parent="Visuals/Polygons/Skeleton2D/Hip/Chest/ArmRight/ForeArmRight"]
 position = Vector2(-113, 7)
@@ -566,6 +641,7 @@ position = Vector2(60, -91)
 rotation = 1.19121
 scale = Vector2(0.999966, 0.999966)
 rest = Transform2D(0.999687, -0.023786, 0.023786, 0.999687, 60, -91)
+metadata/_local_pose_override_enabled_ = true
 
 [node name="ForeArmLeft" type="Bone2D" parent="Visuals/Polygons/Skeleton2D/Hip/Chest/ArmLeft"]
 position = Vector2(80.0023, -4.00093)
@@ -575,6 +651,7 @@ rest = Transform2D(0.998772, -0.0499489, 0.0499489, 0.998772, 80.0023, -4.00093)
 auto_calculate_length_and_angle = false
 length = 60.0
 bone_angle = 0.0
+metadata/_local_pose_override_enabled_ = true
 
 [node name="TipArmLeft" type="Node2D" parent="Visuals/Polygons/Skeleton2D/Hip/Chest/ArmLeft/ForeArmLeft"]
 position = Vector2(68, 0)
@@ -583,6 +660,7 @@ position = Vector2(68, 0)
 position = Vector2(-37, 17)
 rotation = 0.205798
 rest = Transform2D(0.978898, 0.204348, -0.204348, 0.978898, -37, 17)
+metadata/_local_pose_override_enabled_ = true
 
 [node name="CalfRight" type="Bone2D" parent="Visuals/Polygons/Skeleton2D/Hip/LegRight"]
 position = Vector2(13, 72.0002)
@@ -591,6 +669,7 @@ rest = Transform2D(0.973796, -0.227426, 0.227426, 0.973796, 13, 72.0002)
 auto_calculate_length_and_angle = false
 length = 60.0
 bone_angle = 100.0
+metadata/_local_pose_override_enabled_ = true
 
 [node name="TipLegRight" type="Node2D" parent="Visuals/Polygons/Skeleton2D/Hip/LegRight/CalfRight"]
 position = Vector2(-3, 59)
@@ -602,6 +681,7 @@ position = Vector2(44, 13)
 rotation = 0.25632
 scale = Vector2(0.999999, 0.999999)
 rest = Transform2D(0.967329, 0.253522, -0.253522, 0.967329, 44, 13)
+metadata/_local_pose_override_enabled_ = true
 
 [node name="CalfLeft" type="Bone2D" parent="Visuals/Polygons/Skeleton2D/Hip/LegLeft"]
 position = Vector2(13.0001, 72.0002)
@@ -610,6 +690,7 @@ rest = Transform2D(0.962808, -0.270184, 0.270184, 0.962808, 13.0001, 72.0002)
 auto_calculate_length_and_angle = false
 length = 60.0
 bone_angle = 100.0
+metadata/_local_pose_override_enabled_ = true
 
 [node name="TipLegLeft" type="Node2D" parent="Visuals/Polygons/Skeleton2D/Hip/LegLeft/CalfLeft"]
 position = Vector2(-6, 63)
@@ -617,19 +698,39 @@ rotation = -0.441495
 scale = Vector2(0.999893, 0.999893)
 
 [node name="TargetArmLeft" type="Node2D" parent="Visuals"]
-position = Vector2(454, 267)
+position = Vector2(427.695, 261.97)
 
 [node name="TargetArmRight" type="Node2D" parent="Visuals"]
-position = Vector2(239, 370)
+position = Vector2(19, 97)
 
 [node name="TargetLegRight" type="Node2D" parent="Visuals"]
-position = Vector2(294, 432)
+position = Vector2(297, 477)
 
 [node name="TargetLegLeft" type="Node2D" parent="Visuals"]
-position = Vector2(369, 430)
+position = Vector2(370, 456)
+
+[node name="VisualsHidden" type="Node2D" parent="."]
+z_index = -10
+
+[node name="Face" type="Sprite2D" parent="VisualsHidden"]
+position = Vector2(9, -276)
+texture = ExtResource("9_chbjv")
+
+[node name="MonsterEye" parent="VisualsHidden/Face" instance=ExtResource("8_3d5bx")]
+position = Vector2(-28, 3)
+
+[node name="MonsterEye2" parent="VisualsHidden/Face" instance=ExtResource("8_3d5bx")]
+position = Vector2(24, 3)
+
+[node name="PaseantLimitLeft" parent="VisualsHidden/Face/MonsterEye2" index="3"]
+position = Vector2(-61, 214)
+
+[node name="PaseantsSensor" parent="VisualsHidden/Face/MonsterEye2" index="5"]
+position = Vector2(-52, 0)
 
 [connection signal="body_entered" from="ScareArea2D" to="." method="_on_scare_area_2d_body_entered"]
 [connection signal="body_entered" from="PickArea2D" to="." method="_on_pick_area_2d_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 
 [editable path="Visuals/Polygons/Skeleton2D/Hip/Chest/Head/MonsterEyeLeft"]
+[editable path="VisualsHidden/Face/MonsterEye2"]
