@@ -26,7 +26,8 @@ func reparent_and_jump(new_parent: Node2D):
 	
 	# Jump
 	var tween = get_tree().create_tween()
-	tween.tween_property(self, "global_position", new_parent.global_position, 1.0)
+	tween.tween_property(self, "global_position", new_parent.global_position, 0.5)
+	await tween.finished
 	
 
 func _select():
@@ -48,3 +49,6 @@ func _on_gui_input(event):
 	
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		_select()
+		
+	
+	

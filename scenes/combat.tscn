@@ -21,10 +21,12 @@ offset_bottom = -533.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 8
+mouse_filter = 0
 
 [node name="DeckOponent" type="HBoxContainer" parent="MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+mouse_filter = 0
 alignment = 1
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
@@ -55,3 +57,27 @@ offset = Vector2(50, 80)
 position = Vector2(559, 334)
 texture = ExtResource("2_wnku4")
 offset = Vector2(50, 80)
+
+[node name="PointsOponentLabel" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -108.0
+offset_right = -40.0001
+offset_bottom = 86.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 60
+text = "00"
+horizontal_alignment = 2
+
+[node name="PointsMonsterLabel" type="Label" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 39.0
+offset_top = -86.0
+offset_right = 107.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 60
+text = "00"
+horizontal_alignment = 2
