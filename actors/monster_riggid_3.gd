@@ -1,6 +1,14 @@
 class_name Monster
 extends CharacterBody2D
 
+signal pick_not_possible()
+signal card_picked()
+signal in_hidden()
+signal in_unhidden()
+signal walk_started()
+signal idle_started()
+signal scare_started()
+
 @export var max_speed := 100.0
 @export var acceleration := 50.0
 
@@ -12,9 +20,13 @@ extends CharacterBody2D
 var _state := "idle"
 var _hidden := true
 var _direction := 0.0
+var _deck_filled := false
 
 func _ready():
 	_set_state_idle()
+	_set_state_hidden()
+	
+	Global.deck_filled.connect(_on_deck_filled)
 	
 
 func _physics_process(delta):
@@ -48,12 +60,14 @@ func _set_state_hidden():
 	_hidden = true
 	visuals.visible = false
 	visuals_hidden.visible = true
+	emit_signal("in_hidden")
 	
 	
 func _set_state_unhidden():
 	_hidden = false
 	visuals.visible = true
 	visuals_hidden.visible = false
+	emit_signal("in_unhidden")
 
 
 func _set_state_idle():
@@ -62,6 +76,8 @@ func _set_state_idle():
 		animation_player.play("idle_hidden")
 	else: 
 		animation_player.play("idle")
+		
+	emit_signal("idle_started")
 	
 	
 func _set_state_walk():
@@ -70,11 +86,14 @@ func _set_state_walk():
 		animation_player.play("walk_hidden")
 	else: 
 		animation_player.play("walk")
+		
+	emit_signal("walk_started")
 
 
 func _set_state_scare():
 	_state = "scare"
 	animation_player.play("scare")
+	emit_signal("scare_started")
 
 
 func _on_animation_player_animation_finished(anim_name):
@@ -89,7 +108,11 @@ func _on_scare_area_2d_body_entered(body):
 
 func _on_pick_area_2d_body_entered(body):
 	if body is Card:
-		body.pick()
+		if _deck_filled:
+			emit_signal("pick_not_possible")
+		else: 
+			emit_signal("card_picked")
+			body.pick()
 
 
 func _flip_towards_direction():
@@ -97,3 +120,7 @@ func _flip_towards_direction():
 	print("direction_sign: ", direction_sign)
 	if not direction_sign == 0 and not scale.x == direction_sign:
 		scale = Vector2(direction_sign, 1)
+
+
+func _on_deck_filled():
+	_deck_filled = true

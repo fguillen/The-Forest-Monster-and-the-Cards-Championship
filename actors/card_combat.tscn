@@ -1,11 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dan1pdgr76ole"]
+[gd_scene load_steps=7 format=3 uid="uid://dan1pdgr76ole"]
 
 [ext_resource type="Script" path="res://actors/card_combat.gd" id="1_3km6i"]
 [ext_resource type="Texture2D" uid="uid://s3itu3txlik0" path="res://assets/card_reverse.png" id="2_i0fd0"]
 [ext_resource type="PackedScene" uid="uid://wrrjemm28jyp" path="res://actors/card_front.tscn" id="2_vhrxq"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_de7aq"]
-size = Vector2(91, 140)
 
 [sub_resource type="Animation" id="Animation_11ww5"]
 length = 0.001
@@ -121,13 +118,6 @@ position = Vector2(5, 80)
 unique_name_in_owner = true
 position = Vector2(5, 81)
 texture = ExtResource("2_i0fd0")
-
-[node name="ClickArea2D" type="Area2D" parent="."]
-position = Vector2(50, 80)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea2D"]
-position = Vector2(0, -1)
-shape = SubResource("RectangleShape2D_de7aq")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
