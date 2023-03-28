@@ -307,10 +307,10 @@ position = Vector2(299, 155)
 
 [node name="BackgroundNoiseEffectSound" parent="Effects" instance=ExtResource("12_vhvwt")]
 stream = ExtResource("13_6v4su")
-volume_db = -10.0
+volume_db = -40.0
 autoplay = true
 
 [node name="BackgroundMusicEffectSound" parent="Effects" instance=ExtResource("12_vhvwt")]
 stream = ExtResource("14_lyssg")
-volume_db = -6.0
+volume_db = -20.0
 autoplay = true
