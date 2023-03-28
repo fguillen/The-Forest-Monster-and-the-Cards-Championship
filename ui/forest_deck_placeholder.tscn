@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0lfl54lax8v6"]
+
+[ext_resource type="Texture2D" uid="uid://cugxslydb0hrh" path="res://assets/forest_deck_placeholder.png" id="1_3wgcu"]
+[ext_resource type="Script" path="res://ui/forest_deck_placeholder.gd" id="1_77klw"]
+[ext_resource type="PackedScene" uid="uid://wrrjemm28jyp" path="res://actors/card_front.tscn" id="2_gwrlp"]
+
+[node name="ForestDeckPlaceholder" type="Container"]
+custom_minimum_size = Vector2(100, 160)
+pivot_offset = Vector2(-50, -80)
+script = ExtResource("1_77klw")
+card_front_scene = ExtResource("2_gwrlp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3wgcu")

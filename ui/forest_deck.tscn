@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://cufupnieqm5ot"]
+
+[ext_resource type="Script" path="res://ui/forest_deck.gd" id="1_pr2k1"]
+[ext_resource type="PackedScene" uid="uid://b0lfl54lax8v6" path="res://ui/forest_deck_placeholder.tscn" id="2_fkdxh"]
+
+[node name="ForestDeck" type="CanvasLayer"]
+script = ExtResource("1_pr2k1")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -420.0
+offset_top = -97.0
+offset_right = -8.0
+offset_bottom = 63.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Placeholders" type="HBoxContainer" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ForestDeckPlaceholder" parent="MarginContainer/Placeholders" instance=ExtResource("2_fkdxh")]
+layout_mode = 2
+
+[node name="ForestDeckPlaceholder2" parent="MarginContainer/Placeholders" instance=ExtResource("2_fkdxh")]
+layout_mode = 2
+
+[node name="ForestDeckPlaceholder3" parent="MarginContainer/Placeholders" instance=ExtResource("2_fkdxh")]
+layout_mode = 2
+
+[node name="ForestDeckPlaceholder4" parent="MarginContainer/Placeholders" instance=ExtResource("2_fkdxh")]
+layout_mode = 2

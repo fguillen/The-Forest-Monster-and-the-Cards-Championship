@@ -24,7 +24,7 @@ func pick():
 	
 
 func _pick_deferred():
-	Global.pick_card(self.value)
+	Global.pick_card(self.value, global_position)
 	queue_free()
 	
 	

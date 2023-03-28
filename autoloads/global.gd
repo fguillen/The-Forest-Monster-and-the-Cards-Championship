@@ -1,5 +1,7 @@
 extends Node
 
+signal card_picked(card_value: CardValue, position: Vector2)
+
 var picked_cards: Array[CardValue] = []
 
 
@@ -7,9 +9,10 @@ func _ready():
 	_random_monster_cards()
 
 
-func pick_card(card_value: CardValue):
+func pick_card(card_value: CardValue, position: Vector2):
 	print("Global.pick_card: ", card_value)
 	picked_cards.append(card_value)
+	emit_signal("card_picked", card_value, position)
 
 
 func _random_monster_cards():
