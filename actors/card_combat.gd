@@ -4,7 +4,9 @@ extends Control
 signal selected(card_combat: CardCombat)
 
 @onready var click_area: Area2D = $ClickArea2D
-@onready var card_front: CardFront = $CardFront
+@onready var card_front: CardFront = %CardFront
+@onready var back: Sprite2D = %Back
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var value: CardValue
 
@@ -32,6 +34,21 @@ func reparent_and_jump(new_parent: Node2D):
 	await tween.finished
 	
 
+func show_front():
+	back.visible = false
+	card_front.visible = true	
+	
+
+func show_back():
+	back.visible = true
+	card_front.visible = false
+	
+	
+func flip_front():
+	animation_player.play("flip_front")
+	await animation_player.animation_finished
+
+
 func _select():
 	emit_signal("selected", self)
 
@@ -52,5 +69,4 @@ func _on_gui_input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		_select()
 		
-	
 	

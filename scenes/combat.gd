@@ -61,6 +61,7 @@ func _set_up_decks():
 		cards_monster.append(card_combat)
 		deck_container_monster.add_child(card_combat)
 		card_combat.setup(card_value)
+		card_combat.show_front()
 		card_combat.selected.connect(select_card.bind(card_placeholder_monster))
 		
 	for card_value in card_values_oponent:
@@ -68,10 +69,13 @@ func _set_up_decks():
 		cards_oponent.append(card_combat)
 		deck_container_oponent.add_child(card_combat)
 		card_combat.setup(card_value)
+		card_combat.show_back()
 #		card_combat.selected.connect(select_card.bind(card_placeholder_oponent))
 
 
 func _combat(card_combat_monster: CardCombat, card_combat_oponent: CardCombat):
+	await card_combat_oponent.flip_front()
+	
 	# Order
 	if card_combat_monster.value.initiative >= card_combat_oponent.value.initiative:
 		# Monster attack
