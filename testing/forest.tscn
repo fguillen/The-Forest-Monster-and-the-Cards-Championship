@@ -317,7 +317,7 @@ position = Vector2(-7, 391)
 
 [node name="PaseantSpawner" parent="." instance=ExtResource("12_pby02")]
 z_index = 1
-position = Vector2(-704, 214)
+position = Vector2(-732, 214)
 spawn_interval_min = 8.0
 spawn_interval_max = 15.0
 

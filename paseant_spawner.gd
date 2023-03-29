@@ -2,6 +2,8 @@ class_name PaseantSpawner
 extends Node2D
 
 @export var paseant_scene: PackedScene
+
+@export_range(0.1, 20.0) var spawn_first_time := 10
 @export_range(0.1, 20.0) var spawn_interval_min := 0.5
 @export_range(0.1, 20.0) var spawn_interval_max := 3.0
 
@@ -9,7 +11,7 @@ extends Node2D
 
 
 func _ready():
-	_next_interval()
+	_timer.start(spawn_first_time)
 
 
 func spawn():

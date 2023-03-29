@@ -493,30 +493,13 @@ tracks/6/keys = {
 "update": 0,
 "values": [Vector2(158, 222), Vector2(147, 203), Vector2(155, 220)]
 }
-tracks/7/type = "method"
+tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Effects/WalkEffectSound")
+tracks/7/path = NodePath("Polygons/FaceSurprissed:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0.6, 1.4),
-"transitions": PackedFloat32Array(1, 1),
-"values": [{
-"args": [],
-"method": &"perform"
-}, {
-"args": [],
-"method": &"perform"
-}]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Polygons/FaceSurprissed:visible")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,

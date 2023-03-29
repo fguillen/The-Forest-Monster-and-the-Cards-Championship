@@ -29,6 +29,11 @@ func _ready():
 	_current_speed = speed
 	_random_card_value()
 
+
+func _process(delta):
+	_check_if_should_be_destroyed()
+
+
 func _physics_process(delta):
 	velocity = _current_speed * direction
 	move_and_slide()
@@ -88,3 +93,10 @@ func _set_random_clothe_colors():
 	var color_skin = colors_skin.pick_random()
 	for i in _clothe_skin:
 		i.color = color_skin
+
+
+func _check_if_should_be_destroyed():
+	if global_position.x > 1300 or global_position.x < -500:
+		print("Paseant.free()")
+		queue_free()
+	

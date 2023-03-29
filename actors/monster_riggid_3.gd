@@ -50,7 +50,8 @@ func _physics_process(delta):
 		move_and_slide()
 		if _direction:
 			_set_state_walk()
-#			_flip_towards_direction()
+			_check_screen_limits()
+			# _flip_towards_direction()
 		else:
 			_set_state_idle()
 	
@@ -187,4 +188,6 @@ func _on_deck_filled():
 	_deck_filled = true
 
 
+func _check_screen_limits():
+	global_position.x = clamp(global_position.x, 150, 1160)
 
