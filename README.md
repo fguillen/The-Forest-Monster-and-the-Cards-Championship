@@ -7,5 +7,6 @@
 - Forest music: https://freesound.org/people/FoolBoyMedia/sounds/332323/
 - Monster walk: https://freesound.org/people/IlMotografo/sounds/679104/
 - Card combat music: https://freesound.org/people/pinkinblue/sounds/425971/
-- Attack/Deffend: https://freesound.org/people/ethanchase7744/sounds/439538/
--
+- Attack: https://freesound.org/people/lostchocolatelab/sounds/1453/
+- Deffend: https://freesound.org/people/ethanchase7744/sounds/439538/
+- font: https://fonts.google.com/specimen/Amatic+SC

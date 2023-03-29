@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bo3bao28x2rgi"]
+[gd_scene load_steps=4 format=3 uid="uid://bo3bao28x2rgi"]
 
 [ext_resource type="Script" path="res://scenes/end_scene.gd" id="1_r5rwp"]
 [ext_resource type="Texture2D" uid="uid://ut88doou417q" path="res://assets/forest_background.png" id="2_yppbv"]
+[ext_resource type="Theme" uid="uid://5rj305yjowyv" path="res://resources/theme.tres" id="3_3y6a3"]
 
 [node name="EndScene" type="CanvasLayer"]
 script = ExtResource("1_r5rwp")
@@ -11,15 +12,17 @@ position = Vector2(647, 311)
 texture = ExtResource("2_yppbv")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-anchors_preset = 13
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
+anchor_bottom = 0.5
 offset_left = -177.5
+offset_top = -146.5
 offset_right = 177.5
+offset_bottom = 146.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_top = 100
 theme_override_constants/margin_right = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
@@ -27,12 +30,14 @@ layout_mode = 2
 
 [node name="TextLabel" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_3y6a3")
 theme_override_font_sizes/font_size = 80
 text = "You won!"
 horizontal_alignment = 1
 
 [node name="TryAgainButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_3y6a3")
 theme_override_font_sizes/font_size = 60
 text = "Try Again"
 

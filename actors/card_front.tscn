@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://wrrjemm28jyp"]
+[gd_scene load_steps=4 format=3 uid="uid://wrrjemm28jyp"]
 
 [ext_resource type="Script" path="res://actors/card_front.gd" id="1_f0gaq"]
 [ext_resource type="Texture2D" uid="uid://se4xdsrpibqu" path="res://assets/card_front.png" id="1_vca53"]
+[ext_resource type="Theme" uid="uid://5rj305yjowyv" path="res://resources/theme.tres" id="3_2hkth"]
 
 [node name="CardFront" type="Node2D"]
 script = ExtResource("1_f0gaq")
@@ -11,22 +12,24 @@ texture = ExtResource("1_vca53")
 
 [node name="AttackLabel" type="Label" parent="."]
 offset_left = 4.0
-offset_top = -48.0
+offset_top = -65.0
 offset_right = 33.0
-offset_bottom = -12.0
+offset_bottom = 14.0
+theme = ExtResource("3_2hkth")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 35
+theme_override_font_sizes/font_size = 60
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="DefenseLabel" type="Label" parent="."]
 offset_left = 4.0
-offset_top = 5.0
+offset_top = -12.0
 offset_right = 33.0
-offset_bottom = 57.0
+offset_bottom = 67.0
+theme = ExtResource("3_2hkth")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 35
+theme_override_font_sizes/font_size = 60
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -1,10 +1,11 @@
-[gd_scene load_steps=32 format=3 uid="uid://b84qhmcgfb5kk"]
+[gd_scene load_steps=33 format=3 uid="uid://b84qhmcgfb5kk"]
 
 [ext_resource type="Script" path="res://scenes/combat.gd" id="1_lato3"]
 [ext_resource type="Texture2D" uid="uid://d4jsoifyfwa0t" path="res://assets/card_placeholder.png" id="2_wnku4"]
 [ext_resource type="PackedScene" uid="uid://dan1pdgr76ole" path="res://actors/card_combat.tscn" id="3_hthjm"]
 [ext_resource type="Texture2D" uid="uid://ut88doou417q" path="res://assets/forest_background.png" id="3_qa1il"]
 [ext_resource type="PackedScene" uid="uid://vb6a1yxef6do" path="res://effects/effect_sound.tscn" id="5_1klpi"]
+[ext_resource type="Theme" uid="uid://5rj305yjowyv" path="res://resources/theme.tres" id="5_quaxg"]
 [ext_resource type="AudioStream" uid="uid://csugjcljid25x" path="res://assets/sounds/combat_music.wav" id="6_8eorr"]
 [ext_resource type="AudioStream" uid="uid://dnlgv7lr0wme7" path="res://assets/sounds/card_combat_pick.wav" id="7_ajn57"]
 [ext_resource type="AudioStream" uid="uid://b2mb3w8tim6op" path="res://assets/sounds/card_combat_pick_no_possible.wav" id="8_a4cx0"]
@@ -97,23 +98,6 @@ modifications/1 = SubResource("SkeletonModification2DCCDIK_av18t")
 modifications/2 = SubResource("SkeletonModification2DCCDIK_ne6j6")
 modifications/3 = SubResource("SkeletonModification2DCCDIK_y6bnk")
 
-[sub_resource type="Animation" id="Animation_ph2r2"]
-resource_name = "idle"
-length = 2.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Visuals/Polygons/Skeleton2D/Hip:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(341, 254), Vector2(341, 262), Vector2(341, 254)]
-}
-
 [sub_resource type="Animation" id="Animation_y77f2"]
 length = 0.001
 tracks/0/type = "value"
@@ -181,32 +165,21 @@ tracks/1/keys = {
 "values": [Vector2(253, -32), Vector2(255, -61), Vector2(253, -32), Vector2(255, -61), Vector2(253, -32)]
 }
 
-[sub_resource type="Animation" id="Animation_0ucf3"]
-resource_name = "win"
-length = 1.6
+[sub_resource type="Animation" id="Animation_ph2r2"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Visuals/TargetArmLeft:position")
+tracks/0/path = NodePath("Visuals/Polygons/Skeleton2D/Hip:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.4, 0.7, 1, 1.3, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(406, -10), Vector2(408, -39), Vector2(443, -42), Vector2(377, -40), Vector2(443, -42), Vector2(377, -40), Vector2(443, -42)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Visuals/TargetArmRight:position")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.4, 0.7, 1, 1.3, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(253, -32), Vector2(255, -61), Vector2(290, -64), Vector2(224, -62), Vector2(290, -64), Vector2(224, -62), Vector2(290, -64)]
+"values": [Vector2(341, 254), Vector2(341, 262), Vector2(341, 254)]
 }
 
 [sub_resource type="Animation" id="Animation_7040f"]
@@ -235,6 +208,34 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(253, -32), Vector2(273, 30), Vector2(273, -5), Vector2(271, 32), Vector2(271, -3), Vector2(276, 56)]
+}
+
+[sub_resource type="Animation" id="Animation_0ucf3"]
+resource_name = "win"
+length = 1.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals/TargetArmLeft:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4, 0.7, 1, 1.3, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(406, -10), Vector2(408, -39), Vector2(443, -42), Vector2(377, -40), Vector2(443, -42), Vector2(377, -40), Vector2(443, -42)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals/TargetArmRight:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4, 0.7, 1, 1.3, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(253, -32), Vector2(255, -61), Vector2(290, -64), Vector2(224, -62), Vector2(290, -64), Vector2(224, -62), Vector2(290, -64)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6no7o"]
@@ -313,7 +314,8 @@ offset_left = -108.0
 offset_right = -40.0001
 offset_bottom = 86.0
 grow_horizontal = 0
-theme_override_font_sizes/font_size = 60
+theme = ExtResource("5_quaxg")
+theme_override_font_sizes/font_size = 120
 text = "00"
 horizontal_alignment = 2
 
@@ -325,7 +327,8 @@ offset_left = 39.0
 offset_top = -86.0
 offset_right = 107.0
 grow_vertical = 0
-theme_override_font_sizes/font_size = 60
+theme = ExtResource("5_quaxg")
+theme_override_font_sizes/font_size = 120
 text = "00"
 horizontal_alignment = 2
 
