@@ -6,6 +6,7 @@ signal monster_won()
 signal monster_lost()
 signal attack_success()
 signal attack_fail()
+signal attack_success_monster()
 
 @export var card_combat_scene: PackedScene
 @export var debug_monster_cards := false
@@ -101,6 +102,7 @@ func _combat(card_combat_monster: CardCombat, card_combat_oponent: CardCombat):
 		var result = await _attack(card_combat_monster, card_combat_oponent)
 		if result: 
 			points_monster += 1
+			emit_signal("attack_success_monster")
 		await _return_position(card_combat_monster, original_position)
 		
 		# Oponent attack
