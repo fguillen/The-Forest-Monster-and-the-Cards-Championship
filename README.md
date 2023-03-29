@@ -1,8 +1,11 @@
 # The Forest Monster and the Cards Championship
 
-You are the Monsters, you just want Cards to play in the Championship
+You are the Forest Monsters, you just want Cards to participate in the Cards Championship
 
-Visit the road that the humans have made in your natal forest and scare them so they will through the Cards. Pick up them and come back into the deep forest to complete your Card battle with the other Forest Monster.
+In order to gather the cards you need, you must venture onto the human-made road that runs through your forest and scare the passing humans into tossing their cards aside.
+
+Once you've collected enough cards, you can return to the safety of the deep forest and prepare for battle against other Forest Monster.
+
 
 Walkthrough: https://youtu.be/gvoxXpb8BF4
 
