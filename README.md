@@ -15,6 +15,9 @@ Play it here: https://arturitoproductions.itch.io/the-forest-monster-and-the-car
 
 This Game was made in 5 days to participate in the [Jame Gam #26](https://itch.io/jam/jame-gam-26). Here is the [submission entry](https://itch.io/jam/jame-gam-26/rate/1990741).
 
+- Theme: You are the Monster
+- Special Object: Cards
+
 
 ## Credits
 
