@@ -39,6 +39,6 @@ horizontal_alignment = 1
 layout_mode = 2
 theme = ExtResource("3_3y6a3")
 theme_override_font_sizes/font_size = 60
-text = "Try Again"
+text = "Play Again"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/TryAgainButton" to="." method="_on_try_again_button_pressed"]
