@@ -11,6 +11,9 @@ var value: CardValue
 
 var _played := false
 
+func _ready():
+	show_back()
+
 
 func setup(card_value: CardValue):
 	value = card_value
@@ -52,8 +55,14 @@ func _select():
 		emit_signal("selected", self)
 
 
-func _on_gui_input(event):
+func _on_gui_input(event):		
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		_select()
 		
-	
+
+func _on_mouse_entered():
+	animation_player.play("hover")
+
+
+func _on_mouse_exited():
+	animation_player.play("idle")

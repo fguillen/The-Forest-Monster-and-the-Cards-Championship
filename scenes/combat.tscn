@@ -1,9 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://b84qhmcgfb5kk"]
+[gd_scene load_steps=13 format=3 uid="uid://b84qhmcgfb5kk"]
 
 [ext_resource type="Script" path="res://scenes/combat.gd" id="1_lato3"]
 [ext_resource type="Texture2D" uid="uid://d4jsoifyfwa0t" path="res://assets/card_placeholder.png" id="2_wnku4"]
 [ext_resource type="PackedScene" uid="uid://dan1pdgr76ole" path="res://actors/card_combat.tscn" id="3_hthjm"]
 [ext_resource type="Texture2D" uid="uid://ut88doou417q" path="res://assets/forest_background.png" id="3_qa1il"]
+[ext_resource type="PackedScene" uid="uid://vb6a1yxef6do" path="res://effects/effect_sound.tscn" id="5_1klpi"]
+[ext_resource type="AudioStream" uid="uid://csugjcljid25x" path="res://assets/sounds/combat_music.wav" id="6_8eorr"]
+[ext_resource type="AudioStream" uid="uid://dnlgv7lr0wme7" path="res://assets/sounds/card_combat_pick.wav" id="7_ajn57"]
+[ext_resource type="AudioStream" uid="uid://b2mb3w8tim6op" path="res://assets/sounds/card_combat_pick_no_possible.wav" id="8_a4cx0"]
+[ext_resource type="AudioStream" uid="uid://shed50wl815o" path="res://assets/sounds/attack_failed.wav" id="9_uc4mi"]
+[ext_resource type="AudioStream" uid="uid://0den8jfvpyse" path="res://assets/sounds/attack_succeed.wav" id="10_4ap0f"]
+[ext_resource type="AudioStream" uid="uid://b360qxmmvynaf" path="res://assets/sounds/combat_win.wav" id="11_yikls"]
+[ext_resource type="AudioStream" uid="uid://b3y7c1gmkceyk" path="res://assets/sounds/combat_lose.wav" id="12_71gto"]
 
 [node name="Combat" type="CanvasLayer"]
 script = ExtResource("1_lato3")
@@ -19,9 +27,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -183.0
+offset_left = -235.0
 offset_top = -693.0
-offset_right = 229.0
+offset_right = 177.0
 offset_bottom = -533.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -34,15 +42,27 @@ layout_mode = 2
 mouse_filter = 0
 alignment = 1
 
+[node name="CardCombat" parent="MarginContainer/DeckOponent" instance=ExtResource("3_hthjm")]
+layout_mode = 2
+
+[node name="CardCombat2" parent="MarginContainer/DeckOponent" instance=ExtResource("3_hthjm")]
+layout_mode = 2
+
+[node name="CardCombat3" parent="MarginContainer/DeckOponent" instance=ExtResource("3_hthjm")]
+layout_mode = 2
+
+[node name="CardCombat4" parent="MarginContainer/DeckOponent" instance=ExtResource("3_hthjm")]
+layout_mode = 2
+
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -183.0
+offset_left = -229.0
 offset_top = -200.0
-offset_right = 229.0
+offset_right = 183.0
 offset_bottom = -40.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -53,13 +73,25 @@ unique_name_in_owner = true
 layout_mode = 2
 alignment = 1
 
+[node name="CardCombat5" parent="MarginContainer2/DeckMonster" instance=ExtResource("3_hthjm")]
+layout_mode = 2
+
+[node name="CardCombat6" parent="MarginContainer2/DeckMonster" instance=ExtResource("3_hthjm")]
+layout_mode = 2
+
+[node name="CardCombat7" parent="MarginContainer2/DeckMonster" instance=ExtResource("3_hthjm")]
+layout_mode = 2
+
+[node name="CardCombat8" parent="MarginContainer2/DeckMonster" instance=ExtResource("3_hthjm")]
+layout_mode = 2
+
 [node name="CardPlaceholderOponent" type="Sprite2D" parent="."]
-position = Vector2(488, 231)
+position = Vector2(516.5, 231)
 texture = ExtResource("2_wnku4")
 offset = Vector2(50, 80)
 
 [node name="CardPlaceholderMonster" type="Sprite2D" parent="."]
-position = Vector2(559, 334)
+position = Vector2(587.5, 334)
 texture = ExtResource("2_wnku4")
 offset = Vector2(50, 80)
 
@@ -86,3 +118,34 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 60
 text = "00"
 horizontal_alignment = 2
+
+[node name="Effects" type="Node2D" parent="."]
+
+[node name="MusicEffectSound" parent="Effects" instance=ExtResource("5_1klpi")]
+stream = ExtResource("6_8eorr")
+autoplay = true
+
+[node name="CardSelectedEffectSound" parent="Effects" instance=ExtResource("5_1klpi")]
+stream = ExtResource("7_ajn57")
+
+[node name="CardSelectedNoPossibleEffectSound" parent="Effects" instance=ExtResource("5_1klpi")]
+stream = ExtResource("8_a4cx0")
+
+[node name="AttackFailedEffectSound" parent="Effects" instance=ExtResource("5_1klpi")]
+stream = ExtResource("9_uc4mi")
+
+[node name="AttackSucceedEffectSound" parent="Effects" instance=ExtResource("5_1klpi")]
+stream = ExtResource("10_4ap0f")
+
+[node name="CombatWinEffectSound" parent="Effects" instance=ExtResource("5_1klpi")]
+stream = ExtResource("11_yikls")
+
+[node name="CombatLoseEffectSound" parent="Effects" instance=ExtResource("5_1klpi")]
+stream = ExtResource("12_71gto")
+
+[connection signal="attack_fail" from="." to="Effects/AttackFailedEffectSound" method="perform"]
+[connection signal="attack_success" from="." to="Effects/AttackSucceedEffectSound" method="perform"]
+[connection signal="card_selected" from="." to="Effects/CardSelectedEffectSound" method="perform"]
+[connection signal="card_selected_but_no_possible" from="." to="Effects/CardSelectedNoPossibleEffectSound" method="perform"]
+[connection signal="monster_lost" from="." to="Effects/CombatLoseEffectSound" method="perform"]
+[connection signal="monster_won" from="." to="Effects/CombatWinEffectSound" method="perform"]

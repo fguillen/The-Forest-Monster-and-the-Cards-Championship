@@ -6,15 +6,14 @@ extends AudioStreamPlayer
 
 
 func perform():
-	var seek = 0.0 if not start_at_random_seek else _random_seek()
-	
 	if not samples.is_empty():
 		stream = _random_sample()
 		
 	if random_pitch:
 		pitch_scale = randf_range(0.8, 1.2)
 	
-	play(seek)
+	var starting_seek = 0.0 if not start_at_random_seek else _random_seek()
+	play(starting_seek)
 
 
 func finish():

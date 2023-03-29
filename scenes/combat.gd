@@ -1,5 +1,12 @@
 extends CanvasLayer
 
+signal card_selected_but_no_possible()
+signal card_selected()
+signal monster_won()
+signal monster_lost()
+signal attack_success()
+signal attack_fail()
+
 @export var card_combat_scene: PackedScene
 
 @onready var card_placeholder_monster: Node2D = $CardPlaceholderMonster
@@ -23,10 +30,16 @@ var monster_card_in_placeholder: CardCombat
 func select_card(card_combat: CardCombat, card_placeholder: Node2D):
 	if card_placeholder == card_placeholder_monster and monster_card_in_placeholder:
 		print("Card already selected")
+		emit_signal("card_selected_but_no_possible")
+		return
 		
 	if card_placeholder == card_placeholder_oponent and oponent_card_in_placeholder:
 		print("Card already selected")
-		
+		emit_signal("card_selected_but_no_possible")
+		return
+	
+	emit_signal("card_selected")
+	
 	if card_placeholder == card_placeholder_monster:
 		monster_card_in_placeholder = card_combat
 	else: 
@@ -82,23 +95,17 @@ func _combat(card_combat_monster: CardCombat, card_combat_oponent: CardCombat):
 	if card_combat_monster.value.initiative >= card_combat_oponent.value.initiative:
 		# Monster attack
 		var original_position = card_combat_monster.global_position
-		print("_combat 1")
 		var result = await _attack(card_combat_monster, card_combat_oponent)
-		print("_combat 2")
 		if result: 
 			points_monster += 1
 		await _return_position(card_combat_monster, original_position)
-		print("_combat 3")
 		
 		# Oponent attack
 		original_position = card_combat_oponent.global_position
-		print("_combat 4")
 		result = await _attack(card_combat_oponent, card_combat_monster)
-		print("_combat 5")
 		if result: 
 			points_oponent += 1
 		await _return_position(card_combat_oponent, original_position)
-		print("_combat 6")
 		
 		# Clean
 		monster_card_in_placeholder = null
@@ -110,7 +117,13 @@ func _combat(card_combat_monster: CardCombat, card_combat_oponent: CardCombat):
 		
 		# End?
 		if cards_monster.is_empty():
-			Global.was_a_win = points_monster >= points_oponent
+			var was_a_win = points_monster >= points_oponent
+			if was_a_win:
+				emit_signal("monster_won")
+			else:
+				emit_signal("monster_lost")
+			Global.was_a_win = was_a_win
+			await get_tree().create_timer(3.0).timeout
 			get_tree().change_scene_to_file("res://scenes/end_scene.tscn")
 		
 		
@@ -120,8 +133,10 @@ func _attack(card_combat_attack: CardCombat, card_combat_deffend: CardCombat):
 	tween.tween_property(card_combat_attack, "global_position", card_combat_deffend.global_position, 0.5)
 	await tween.finished
 	if card_combat_attack.value.attack >= card_combat_deffend.value.defense:
+		emit_signal("attack_success")
 		return true
 	else:
+		emit_signal("attack_fail")
 		return false
 		
 

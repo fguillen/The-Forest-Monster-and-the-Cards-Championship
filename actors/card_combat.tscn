@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dan1pdgr76ole"]
+[gd_scene load_steps=9 format=3 uid="uid://dan1pdgr76ole"]
 
 [ext_resource type="Script" path="res://actors/card_combat.gd" id="1_3km6i"]
 [ext_resource type="Texture2D" uid="uid://s3itu3txlik0" path="res://assets/card_reverse.png" id="2_i0fd0"]
@@ -42,6 +42,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector2(1, 1)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Visuals:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(44, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_0oalx"]
 resource_name = "flip_front"
@@ -83,10 +95,43 @@ tracks/2/keys = {
 "values": [Vector2(1, 1), Vector2(0.1, 1), Vector2(1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_qrtqq"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(44, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_db7wr"]
+resource_name = "hover"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(44, 0), Vector2(44, -22)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_seb4d"]
 _data = {
 "RESET": SubResource("Animation_11ww5"),
-"flip_front": SubResource("Animation_0oalx")
+"flip_front": SubResource("Animation_0oalx"),
+"hover": SubResource("Animation_db7wr"),
+"idle": SubResource("Animation_qrtqq")
 }
 
 [node name="CardCombat" type="Control"]
@@ -120,8 +165,11 @@ position = Vector2(5, 81)
 texture = ExtResource("2_i0fd0")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "idle"
 libraries = {
 "": SubResource("AnimationLibrary_seb4d")
 }
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
