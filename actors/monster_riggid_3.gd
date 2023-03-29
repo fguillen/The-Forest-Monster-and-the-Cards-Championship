@@ -85,9 +85,11 @@ func _set_state_hidden():
 		_hidden_canvas_layer.add_child(self)
 		global_position = actual_position
 	
-	
 	emit_signal("in_hidden")
 	
+	if _deck_filled:	
+		get_tree().change_scene_to_file("res://scenes/combat.tscn")
+
 	
 func _set_state_unhidden():
 	if _hidden == false:
@@ -166,11 +168,11 @@ func _on_pick_area_2d_body_entered(body):
 			body.pick()
 
 
-func _flip_towards_direction():
-	var direction_sign = sign(_direction)
-	print("direction_sign: ", direction_sign)
-	if not direction_sign == 0 and not scale.x == direction_sign:
-		scale = Vector2(direction_sign, 1)
+#func _flip_towards_direction():
+#	var direction_sign = sign(_direction)
+#	print("direction_sign: ", direction_sign)
+#	if not direction_sign == 0 and not scale.x == direction_sign:
+#		scale = Vector2(direction_sign, 1)
 
 
 func _on_deck_filled():
