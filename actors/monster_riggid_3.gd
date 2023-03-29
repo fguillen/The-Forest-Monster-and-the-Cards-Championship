@@ -84,6 +84,8 @@ func _set_state_hidden():
 		get_parent().remove_child(self)
 		_hidden_canvas_layer.add_child(self)
 		global_position = actual_position
+		
+	animation_player.play("idle_hidden")
 	
 	emit_signal("in_hidden")
 	
@@ -108,8 +110,9 @@ func _set_state_unhidden():
 		_unhidden_canvas_layer.add_child(self)
 		global_position = actual_position
 		
+	animation_player.play("idle")
+		
 	emit_signal("in_unhidden")
-
 
 func _set_state_idle():
 	if _state == "idle":
