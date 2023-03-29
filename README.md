@@ -6,6 +6,7 @@
 - Forest background: https://freesound.org/people/mirkosukovic/sounds/434017/
 - Forest music: https://freesound.org/people/FoolBoyMedia/sounds/332323/
 - Monster walk: https://freesound.org/people/IlMotografo/sounds/679104/
+- Paseant walk: https://freesound.org/people/Lukeo135/sounds/540728/
 - Card combat music: https://freesound.org/people/pinkinblue/sounds/425971/
 - Attack: https://freesound.org/people/lostchocolatelab/sounds/1453/
 - Deffend: https://freesound.org/people/ethanchase7744/sounds/439538/

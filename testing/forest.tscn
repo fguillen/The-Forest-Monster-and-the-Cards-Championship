@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dl1vhd3qoyhn5"]
+[gd_scene load_steps=18 format=3 uid="uid://dl1vhd3qoyhn5"]
 
 [ext_resource type="Texture2D" uid="uid://dma22u16xh2fi" path="res://tree_02.png" id="1_j0wnd"]
 [ext_resource type="Texture2D" uid="uid://ut88doou417q" path="res://assets/forest_background.png" id="1_lvy1g"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://bc0shb4yt2nlp" path="res://road.png" id="4_jwmf3"]
 [ext_resource type="Texture2D" uid="uid://copauticogsmb" path="res://grass.png" id="5_n1yta"]
 [ext_resource type="PackedScene" uid="uid://bp1g6f2qxumcn" path="res://actors/monster_riggid_3.tscn" id="10_fnlqw"]
-[ext_resource type="PackedScene" uid="uid://bol8dpj3j7s0x" path="res://actors/paseant.tscn" id="11_85lh6"]
 [ext_resource type="PackedScene" uid="uid://s2a7n4743ock" path="res://paseant_spawner.tscn" id="12_pby02"]
 [ext_resource type="PackedScene" uid="uid://cufupnieqm5ot" path="res://ui/forest_deck.tscn" id="12_uq5et"]
 [ext_resource type="PackedScene" uid="uid://vb6a1yxef6do" path="res://effects/effect_sound.tscn" id="12_vhvwt"]
@@ -343,35 +342,3 @@ autoplay = true
 stream = ExtResource("14_lyssg")
 volume_db = -20.0
 autoplay = true
-
-[node name="Paseant" parent="." instance=ExtResource("11_85lh6")]
-position = Vector2(24, 169)
-speed = 0
-
-[node name="Paseant2" parent="." instance=ExtResource("11_85lh6")]
-position = Vector2(102, 165)
-speed = 0
-
-[node name="Paseant3" parent="." instance=ExtResource("11_85lh6")]
-position = Vector2(185, 165)
-speed = 0
-
-[node name="Paseant4" parent="." instance=ExtResource("11_85lh6")]
-position = Vector2(239, 171)
-speed = 0
-
-[node name="Paseant5" parent="." instance=ExtResource("11_85lh6")]
-position = Vector2(352, 169)
-speed = 0
-
-[node name="Paseant6" parent="." instance=ExtResource("11_85lh6")]
-position = Vector2(430, 165)
-speed = 0
-
-[node name="Paseant7" parent="." instance=ExtResource("11_85lh6")]
-position = Vector2(513, 165)
-speed = 0
-
-[node name="Paseant8" parent="." instance=ExtResource("11_85lh6")]
-position = Vector2(567, 171)
-speed = 0
