@@ -359,3 +359,19 @@ speed = 0
 [node name="Paseant4" parent="." instance=ExtResource("11_85lh6")]
 position = Vector2(239, 171)
 speed = 0
+
+[node name="Paseant5" parent="." instance=ExtResource("11_85lh6")]
+position = Vector2(352, 169)
+speed = 0
+
+[node name="Paseant6" parent="." instance=ExtResource("11_85lh6")]
+position = Vector2(430, 165)
+speed = 0
+
+[node name="Paseant7" parent="." instance=ExtResource("11_85lh6")]
+position = Vector2(513, 165)
+speed = 0
+
+[node name="Paseant8" parent="." instance=ExtResource("11_85lh6")]
+position = Vector2(567, 171)
+speed = 0

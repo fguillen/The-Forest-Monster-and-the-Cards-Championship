@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://jk8s64it8rgt" path="res://assets/paseant/paseant.png" id="1_j54ba"]
 [ext_resource type="PackedScene" uid="uid://hbv7khsd8fs0" path="res://actors/card.tscn" id="3_hied0"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rqr6o"]
+size = Vector2(54, 132)
+
 [sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_85d3m"]
 resource_local_to_scene = true
 target_nodepath = NodePath("../../TargetArmRight")
@@ -365,14 +368,15 @@ _data = {
 "walk": SubResource("Animation_a0w42")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rqr6o"]
-size = Vector2(54, 132)
-
 [node name="Paseant" type="CharacterBody2D"]
 position = Vector2(-1, -1)
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_6072s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(175, 101)
+shape = SubResource("RectangleShape2D_rqr6o")
 
 [node name="Polygons" type="Node2D" parent="."]
 
@@ -406,6 +410,7 @@ internal_vertex_count = 3
 
 [node name="FootLeft" type="Polygon2D" parent="Polygons"]
 position = Vector2(3, -36)
+color = Color(0, 0, 0, 1)
 texture = ExtResource("1_j54ba")
 skeleton = NodePath("../Skeleton2D")
 polygon = PackedVector2Array(185.96, 249.284, 184.814, 258.166, 187.106, 263.897, 193.696, 265.043, 208.023, 264.47, 214.04, 257.307, 208.596, 249.284)
@@ -413,6 +418,7 @@ uv = PackedVector2Array(185.96, 249.284, 184.814, 258.166, 187.106, 263.897, 193
 bones = ["Hip", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hip/Chest", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hip/Chest/Head", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hip/ArmRight", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hip/ArmRight/ForearmRight", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hip/ArmRight/ForearmRight/HandRight", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hip/ArmLeft", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hip/ArmLeft/ForearmLeft", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hip/ArmLeft/ForearmLeft/HandLeft", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hip/LegRight", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hip/LegRight/CalfRight", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hip/LegRight/CalfRight/FootRight", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hip/LegLeft", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hip/LegLeft/CalfLeft", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hip/LegLeft/CalfLeft/FootLeft", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1)]
 
 [node name="Body" type="Polygon2D" parent="Polygons"]
+color = Color(0.545098, 0.478431, 0.403922, 1)
 texture = ExtResource("1_j54ba")
 skeleton = NodePath("../Skeleton2D")
 polygon = PackedVector2Array(149.688, 66.5354, 161.893, 61.4173, 182.365, 62.5984, 204.018, 66.5354, 206.381, 103.937, 205.987, 119.291, 206.381, 129.528, 203.231, 160.236, 196.145, 167.323, 171.341, 168.504, 151.656, 167.323, 143.389, 155.906, 146.538, 129.921, 144.57, 118.898, 144.57, 109.055)
@@ -474,6 +480,7 @@ internal_vertex_count = 3
 
 [node name="FootRight" type="Polygon2D" parent="Polygons"]
 position = Vector2(5, -35)
+color = Color(0, 0, 0, 1)
 texture = ExtResource("1_j54ba")
 skeleton = NodePath("../Skeleton2D")
 polygon = PackedVector2Array(155.301, 248.711, 154.155, 257.593, 156.447, 263.324, 163.037, 264.47, 179.656, 262.178, 185.1, 256.447, 182.521, 248.997)
@@ -481,6 +488,7 @@ uv = PackedVector2Array(155.014, 251.003, 154.155, 257.593, 156.447, 263.324, 16
 bones = ["Hip", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hip/Chest", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hip/Chest/Head", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hip/ArmRight", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hip/ArmRight/ForearmRight", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hip/ArmRight/ForearmRight/HandRight", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hip/ArmLeft", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hip/ArmLeft/ForearmLeft", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hip/ArmLeft/ForearmLeft/HandLeft", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hip/LegRight", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hip/LegRight/CalfRight", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hip/LegRight/CalfRight/FootRight", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1), "Hip/LegLeft", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hip/LegLeft/CalfLeft", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hip/LegLeft/CalfLeft/FootLeft", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)]
 
 [node name="Skeleton2D" type="Skeleton2D" parent="Polygons"]
+visible = false
 modification_stack = SubResource("SkeletonModificationStack2D_gdssj")
 
 [node name="Hip" type="Bone2D" parent="Polygons/Skeleton2D"]
@@ -501,12 +509,10 @@ bone_angle = -90.0
 [node name="ArmRight" type="Bone2D" parent="Polygons/Skeleton2D/Hip"]
 position = Vector2(-25, -73)
 rest = Transform2D(1, 0, 0, 1, -25, -73)
-metadata/_local_pose_override_enabled_ = true
 
 [node name="ForearmRight" type="Bone2D" parent="Polygons/Skeleton2D/Hip/ArmRight"]
 position = Vector2(-35, 2)
 rest = Transform2D(1, 0, 0, 1, -35, 2)
-metadata/_local_pose_override_enabled_ = true
 
 [node name="HandRight" type="Bone2D" parent="Polygons/Skeleton2D/Hip/ArmRight/ForearmRight"]
 position = Vector2(-45, 2)
@@ -522,13 +528,11 @@ position = Vector2(-44, 2)
 position = Vector2(19, -73)
 rotation = -0.0239745
 rest = Transform2D(0.999713, -0.0239722, 0.0239722, 0.999713, 19, -73)
-metadata/_local_pose_override_enabled_ = true
 
 [node name="ForearmLeft" type="Bone2D" parent="Polygons/Skeleton2D/Hip/ArmLeft"]
 position = Vector2(40, 0)
 rotation = -0.0246668
 rest = Transform2D(0.999696, -0.0246643, 0.0246643, 0.999696, 40, 0)
-metadata/_local_pose_override_enabled_ = true
 
 [node name="HandLeft" type="Bone2D" parent="Polygons/Skeleton2D/Hip/ArmLeft/ForearmLeft"]
 position = Vector2(45.0089, 1.14867)
@@ -543,14 +547,12 @@ position = Vector2(41, -1)
 [node name="LegRight" type="Bone2D" parent="Polygons/Skeleton2D/Hip"]
 position = Vector2(-16, 9)
 rest = Transform2D(1, 0, 0, 1, -16, 9)
-metadata/_local_pose_override_enabled_ = true
 
 [node name="CalfRight" type="Bone2D" parent="Polygons/Skeleton2D/Hip/LegRight"]
 position = Vector2(3.00128, 34.0025)
 rotation = -0.741765
 scale = Vector2(0.999977, 0.999977)
 rest = Transform2D(1, 0, 0, 1, 3, 34)
-metadata/_local_pose_override_enabled_ = true
 
 [node name="FootRight" type="Bone2D" parent="Polygons/Skeleton2D/Hip/LegRight/CalfRight"]
 position = Vector2(0, 31)
@@ -565,12 +567,10 @@ position = Vector2(0, 31)
 [node name="LegLeft" type="Bone2D" parent="Polygons/Skeleton2D/Hip"]
 position = Vector2(12, 11)
 rest = Transform2D(1, 0, 0, 1, 12, 11)
-metadata/_local_pose_override_enabled_ = true
 
 [node name="CalfLeft" type="Bone2D" parent="Polygons/Skeleton2D/Hip/LegLeft"]
 position = Vector2(3, 34)
 rest = Transform2D(1, 0, 0, 1, 3, 34)
-metadata/_local_pose_override_enabled_ = true
 
 [node name="FootLeft" type="Bone2D" parent="Polygons/Skeleton2D/Hip/LegLeft/CalfLeft"]
 position = Vector2(0, 31)
@@ -603,9 +603,5 @@ libraries = {
 [node name="Card" parent="." instance=ExtResource("3_hied0")]
 position = Vector2(176, -21)
 scale = Vector2(0.7, 0.7)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(175, 101)
-shape = SubResource("RectangleShape2D_rqr6o")
 
 [connection signal="scared" from="." to="Card" method="jump"]
