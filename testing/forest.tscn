@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dl1vhd3qoyhn5"]
+[gd_scene load_steps=18 format=3 uid="uid://dl1vhd3qoyhn5"]
 
 [ext_resource type="Texture2D" uid="uid://dma22u16xh2fi" path="res://tree_02.png" id="1_j0wnd"]
 [ext_resource type="Texture2D" uid="uid://ut88doou417q" path="res://assets/forest_background.png" id="1_lvy1g"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://bc0shb4yt2nlp" path="res://road.png" id="4_jwmf3"]
 [ext_resource type="Texture2D" uid="uid://copauticogsmb" path="res://grass.png" id="5_n1yta"]
 [ext_resource type="PackedScene" uid="uid://bp1g6f2qxumcn" path="res://actors/monster_riggid_3.tscn" id="10_fnlqw"]
-[ext_resource type="PackedScene" uid="uid://bol8dpj3j7s0x" path="res://actors/paseant.tscn" id="11_85lh6"]
 [ext_resource type="PackedScene" uid="uid://s2a7n4743ock" path="res://paseant_spawner.tscn" id="12_pby02"]
 [ext_resource type="PackedScene" uid="uid://cufupnieqm5ot" path="res://ui/forest_deck.tscn" id="12_uq5et"]
 [ext_resource type="PackedScene" uid="uid://vb6a1yxef6do" path="res://effects/effect_sound.tscn" id="12_vhvwt"]
@@ -319,9 +318,8 @@ position = Vector2(-7, 391)
 [node name="PaseantSpawner" parent="." instance=ExtResource("12_pby02")]
 z_index = 1
 position = Vector2(-704, 214)
-
-[node name="Paseant" parent="PaseantSpawner" instance=ExtResource("11_85lh6")]
-position = Vector2(1003, -16)
+spawn_interval_min = 3.0
+spawn_interval_max = 8
 
 [node name="Ground" type="StaticBody2D" parent="."]
 collision_layer = 32
