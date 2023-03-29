@@ -743,6 +743,7 @@ position = Vector2(-74, -86)
 rotation = -1.40045
 scale = Vector2(0.999986, 0.999986)
 rest = Transform2D(0.993538, 0.113377, -0.113377, 0.993538, -74, -86)
+metadata/_local_pose_override_enabled_ = true
 
 [node name="ForeArmRight" type="Bone2D" parent="Visuals/Polygons/Skeleton2D/Hip/Chest/ArmRight"]
 position = Vector2(-83.0036, 3.00098)
@@ -751,6 +752,7 @@ rest = Transform2D(0.999672, 0.0257261, -0.0257261, 0.999672, -83.0036, 3.00098)
 auto_calculate_length_and_angle = false
 length = 60.0
 bone_angle = -180.0
+metadata/_local_pose_override_enabled_ = true
 
 [node name="TipArmRight" type="Node2D" parent="Visuals/Polygons/Skeleton2D/Hip/Chest/ArmRight/ForeArmRight"]
 position = Vector2(-113, 7)
@@ -760,6 +762,7 @@ position = Vector2(60, -91)
 rotation = 1.19121
 scale = Vector2(0.999966, 0.999966)
 rest = Transform2D(0.999687, -0.023786, 0.023786, 0.999687, 60, -91)
+metadata/_local_pose_override_enabled_ = true
 
 [node name="ForeArmLeft" type="Bone2D" parent="Visuals/Polygons/Skeleton2D/Hip/Chest/ArmLeft"]
 position = Vector2(80.0023, -4.00093)
@@ -769,6 +772,7 @@ rest = Transform2D(0.998772, -0.0499489, 0.0499489, 0.998772, 80.0023, -4.00093)
 auto_calculate_length_and_angle = false
 length = 60.0
 bone_angle = 0.0
+metadata/_local_pose_override_enabled_ = true
 
 [node name="TipArmLeft" type="Node2D" parent="Visuals/Polygons/Skeleton2D/Hip/Chest/ArmLeft/ForeArmLeft"]
 position = Vector2(68, 0)
@@ -777,6 +781,7 @@ position = Vector2(68, 0)
 position = Vector2(-37, 17)
 rotation = 0.205798
 rest = Transform2D(0.978898, 0.204348, -0.204348, 0.978898, -37, 17)
+metadata/_local_pose_override_enabled_ = true
 
 [node name="CalfRight" type="Bone2D" parent="Visuals/Polygons/Skeleton2D/Hip/LegRight"]
 position = Vector2(13, 72.0002)
@@ -785,6 +790,7 @@ rest = Transform2D(0.973796, -0.227426, 0.227426, 0.973796, 13, 72.0002)
 auto_calculate_length_and_angle = false
 length = 60.0
 bone_angle = 100.0
+metadata/_local_pose_override_enabled_ = true
 
 [node name="TipLegRight" type="Node2D" parent="Visuals/Polygons/Skeleton2D/Hip/LegRight/CalfRight"]
 position = Vector2(-3, 59)
@@ -796,6 +802,7 @@ position = Vector2(44, 13)
 rotation = 0.25632
 scale = Vector2(0.999999, 0.999999)
 rest = Transform2D(0.967329, 0.253522, -0.253522, 0.967329, 44, 13)
+metadata/_local_pose_override_enabled_ = true
 
 [node name="CalfLeft" type="Bone2D" parent="Visuals/Polygons/Skeleton2D/Hip/LegLeft"]
 position = Vector2(13.0001, 72.0002)
@@ -804,6 +811,7 @@ rest = Transform2D(0.962808, -0.270184, 0.270184, 0.962808, 13.0001, 72.0002)
 auto_calculate_length_and_angle = false
 length = 60.0
 bone_angle = 100.0
+metadata/_local_pose_override_enabled_ = true
 
 [node name="TipLegLeft" type="Node2D" parent="Visuals/Polygons/Skeleton2D/Hip/LegLeft/CalfLeft"]
 position = Vector2(-6, 63)

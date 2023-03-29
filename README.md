@@ -11,6 +11,11 @@ Walkthrough: https://youtu.be/gvoxXpb8BF4
 
 Play it here: https://arturitoproductions.itch.io/the-forest-monster-and-the-cards-championship
 
+## Game jam submission
+
+This Game was made in 5 days to participate in the [Jame Gam #26](https://itch.io/jam/jame-gam-26). Here is the [submission entry](https://itch.io/jam/jame-gam-26/rate/1990741).
+
+
 ## Credits
 
 - Art, game design, and programming: Alberto Bueno
