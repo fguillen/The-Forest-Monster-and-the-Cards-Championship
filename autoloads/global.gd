@@ -23,7 +23,5 @@ func reset():
 
 func _random_monster_cards():
 	for i in 4:
-		var random_card_value = CardValue.new()
-		random_card_value.attack = randi_range(0, 9)
-		random_card_value.defense = randi_range(0, 9)
+		var random_card_value = CardValue.random_new()
 		picked_cards.append(random_card_value)

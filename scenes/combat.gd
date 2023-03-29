@@ -8,6 +8,7 @@ signal attack_success()
 signal attack_fail()
 
 @export var card_combat_scene: PackedScene
+@export var debug_monster_cards := false
 
 @onready var card_placeholder_monster: Node2D = $CardPlaceholderMonster
 @onready var card_placeholder_oponent: Node2D = $CardPlaceholderOponent
@@ -54,17 +55,19 @@ func select_card(card_combat: CardCombat, card_placeholder: Node2D):
 		_oponent_select_random_card()
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	Global.was_a_win = false
 	
-	for card_value in Global.picked_cards:
-		card_values_monster.append(card_value)
+	if debug_monster_cards:
+		for i in 4:
+			var random_card_value = CardValue.random_new()
+			card_values_monster.append(random_card_value)
+	else:
+		for card_value in Global.picked_cards:
+			card_values_monster.append(card_value)
 	
 	for i in 4:
-		var random_card_value = CardValue.new()
-		random_card_value.attack = randi_range(0, 9)
-		random_card_value.defense = randi_range(0, 9)
+		var random_card_value = CardValue.random_new()
 		card_values_oponent.append(random_card_value)
 		
 	_set_up_decks()
@@ -159,3 +162,4 @@ func _set_points_oponent(value: int):
 func _oponent_select_random_card():
 	var random_card = cards_oponent.pick_random()
 	select_card(random_card, card_placeholder_oponent)
+

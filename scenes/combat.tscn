@@ -16,6 +16,7 @@
 [node name="Combat" type="CanvasLayer"]
 script = ExtResource("1_lato3")
 card_combat_scene = ExtResource("3_hthjm")
+debug_monster_cards = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(580, 363)
@@ -42,18 +43,6 @@ layout_mode = 2
 mouse_filter = 0
 alignment = 1
 
-[node name="CardCombat" parent="MarginContainer/DeckOponent" instance=ExtResource("3_hthjm")]
-layout_mode = 2
-
-[node name="CardCombat2" parent="MarginContainer/DeckOponent" instance=ExtResource("3_hthjm")]
-layout_mode = 2
-
-[node name="CardCombat3" parent="MarginContainer/DeckOponent" instance=ExtResource("3_hthjm")]
-layout_mode = 2
-
-[node name="CardCombat4" parent="MarginContainer/DeckOponent" instance=ExtResource("3_hthjm")]
-layout_mode = 2
-
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 anchors_preset = 7
 anchor_left = 0.5
@@ -72,18 +61,6 @@ size_flags_vertical = 8
 unique_name_in_owner = true
 layout_mode = 2
 alignment = 1
-
-[node name="CardCombat5" parent="MarginContainer2/DeckMonster" instance=ExtResource("3_hthjm")]
-layout_mode = 2
-
-[node name="CardCombat6" parent="MarginContainer2/DeckMonster" instance=ExtResource("3_hthjm")]
-layout_mode = 2
-
-[node name="CardCombat7" parent="MarginContainer2/DeckMonster" instance=ExtResource("3_hthjm")]
-layout_mode = 2
-
-[node name="CardCombat8" parent="MarginContainer2/DeckMonster" instance=ExtResource("3_hthjm")]
-layout_mode = 2
 
 [node name="CardPlaceholderOponent" type="Sprite2D" parent="."]
 position = Vector2(516.5, 231)
@@ -123,6 +100,7 @@ horizontal_alignment = 2
 
 [node name="MusicEffectSound" parent="Effects" instance=ExtResource("5_1klpi")]
 stream = ExtResource("6_8eorr")
+volume_db = -20.0
 autoplay = true
 
 [node name="CardSelectedEffectSound" parent="Effects" instance=ExtResource("5_1klpi")]
