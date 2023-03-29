@@ -157,6 +157,11 @@ func _on_animation_player_animation_finished(anim_name):
 func _on_scare_area_2d_body_entered(body):
 	if body is Paseant:
 		body.scare()
+		
+		
+func _on_surprise_area_2d_2_body_entered(body):
+	if body is Paseant:
+		body.walk_back()
 
 
 func _on_pick_area_2d_body_entered(body):
@@ -177,3 +182,6 @@ func _on_pick_area_2d_body_entered(body):
 
 func _on_deck_filled():
 	_deck_filled = true
+
+
+

@@ -5,6 +5,7 @@ signal scared()
 
 @export var speed = 100
 @export var speed_run = 300
+@export var speed_back = 125
 @export var direction = Vector2.RIGHT
 
 @export var colors_skin: Array[Color]
@@ -37,6 +38,13 @@ func scare():
 	animation_player.play("run")
 	_current_speed = speed_run
 	emit_signal("scared")
+	
+	
+func walk_back():
+	animation_player.play("walk_back")
+	_current_speed = speed_back
+	direction = Vector2.LEFT
+	emit_signal("walk_back")
 	
 	
 func _random_card_value():
