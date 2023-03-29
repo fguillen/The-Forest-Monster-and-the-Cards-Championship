@@ -7,7 +7,7 @@ In order to gather the cards you need, you must venture onto the human-made road
 Once you've collected enough cards, you can return to the safety of the deep forest and prepare for battle against other Forest Monster.
 
 
-Walkthrough: https://youtu.be/gvoxXpb8BF4
+Walkthrough: https://youtu.be/xv0KwTPHg2w
 
 Play it here: https://arturitoproductions.itch.io/the-forest-monster-and-the-cards-championship
 
