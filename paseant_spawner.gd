@@ -2,12 +2,12 @@ class_name PaseantSpawner
 extends Node2D
 
 @export var paseant_scene: PackedScene
-@export_range(0.1, 10.0) var spawn_interval_min := 0.5
-@export_range(0.1, 10.0) var spawn_interval_max := 3
+@export_range(0.1, 20.0) var spawn_interval_min := 0.5
+@export_range(0.1, 20.0) var spawn_interval_max := 3.0
 
 @onready var _timer: Timer = $Timer
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	_next_interval()
 

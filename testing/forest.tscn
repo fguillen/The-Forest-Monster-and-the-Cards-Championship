@@ -318,8 +318,8 @@ position = Vector2(-7, 391)
 [node name="PaseantSpawner" parent="." instance=ExtResource("12_pby02")]
 z_index = 1
 position = Vector2(-704, 214)
-spawn_interval_min = 3.0
-spawn_interval_max = 8
+spawn_interval_min = 8.0
+spawn_interval_max = 15.0
 
 [node name="Ground" type="StaticBody2D" parent="."]
 collision_layer = 32
